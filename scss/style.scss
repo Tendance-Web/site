@@ -9,19 +9,19 @@ html {
 }
 
 
+
 body {
   font-family : 'Oswald, Roboto', sans-serif;
   font-weight: 500;
   height        : 100vh;
   background    : $black-l1;
-  padding    : 2.5rem;
+  padding    : 1rem;
   color               : $green;
 }
 
 .Intro ul {
   text-align    : left;
   margin    : 0 auto;
-  a{text-decoration: none;}
     .projet {
         //border-bottom: 1px solid darken($green,60%);
         margin-top: 1rem;
@@ -38,17 +38,28 @@ body {
 
 time {font-weight: bold;}
 
-a.bt.bt-slim {
+a.texte {
+  text-decoration: none;
+}
+a.bt-slim{
   color       : $black-l1;
   background  : $green;
-  font-weight : 100 !important;
-  padding     : 0;
+  font-weight : 500 !important;
+  padding     : .25rem;
   line-height: 1rem;
-  text-decoration: none;
+text-decoration: none;
+display: inline-block;
+position: relative;
+-moz-osx-font-smoothing: grayscale;
+transition-duration: 0.3s;
+transition-property: transform background;
+transition-timing-function: ease-in-out;;
+
   &:hover {
-    color       : $green;
-    background  : $black-l1;
-  }
+     transform: translateX(2px);
+     color       : $green;
+     background  : rgba($black-l1,.1);
+   }
 }
 
 @media only screen and (max-device-width : 480px) {
