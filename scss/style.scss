@@ -5,15 +5,13 @@
         "../node_modules/fontawesome-scss/fontAwesome";
 
 
+
+
 html {
   height    : 100%;
   font-size : 14px;
 }
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 body {
   height      : 100vh;
   padding     : 1rem;
@@ -28,13 +26,16 @@ body {
 .Intro ul {
   margin     : 0 auto;
   text-align : left;
-
+  display: flex;
+  justify-content: space-around;
   .projet {
-    // border-bottom: 1px solid darken($green,60%);
     margin-top : 1rem;
+    border-bottom: 1px solid green;
+    flex-direction: column;
 
     ul {
       padding : 1rem;
+      flex-direction: column;
     }
   }
 }
@@ -45,6 +46,7 @@ time {
 
 a.texte {
   text-decoration : none;
+  flex-direction: column;
 }
 
 a.bt-slim {
