@@ -87,15 +87,23 @@ a.bt-slim {
   background-color : $black-l1;
   align-items      : center;
   justify-content  : center;
-  transform:translateX(-100%);
-  transition:transform .6s ease-in;
+  transform:translateX(calc(-100% - 1rem));
+  transition: transform .6s ease-in-out;
   &.GRD_opened {
-    transform:translateX(0);
+    transform:translateX(-1rem);
   }
 }
 
 .bt_close {
-  @include fa ($fa-user,white,10px);
+  @include fa ($fa-long-arrow-right,white,40px);
+  position: fixed;
+  top: 20px;
+  right:20px;
+  transition:transform .6s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    transform: rotate(-180deg);
+  }
 }
 
 @media only screen
