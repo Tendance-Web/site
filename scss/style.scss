@@ -12,6 +12,7 @@ html {
   font-size : 14px;
 }
 
+
 body {
   height      : 100vh;
   padding     : 1rem;
@@ -30,7 +31,6 @@ body {
   justify-content: space-around;
   .projet {
     margin-top : 1rem;
-    border-bottom: 1px solid green;
     flex-direction: column;
 
     ul {

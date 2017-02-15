@@ -2288,7 +2288,6 @@ body {
   justify-content: space-around; }
   .Intro ul .projet {
     margin-top: 1rem;
-    border-bottom: 1px solid green;
     flex-direction: column; }
     .Intro ul .projet ul {
       padding: 1rem;
