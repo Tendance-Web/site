@@ -1,130 +1,188 @@
-@import "includes/reset",
-        "includes/animate",
-        "includes/colors",
-        "includes/base",
-        "../node_modules/fontawesome-scss/fontAwesome";
+@import 'includes/reset',
+        'includes/animate',
+        'includes/colors',
+        'includes/base',
+        '../node_modules/fontawesome-scss/fontAwesome';
 
-html {
-  height    : 100%;
-  font-size : 14px;
+html
+{
+    font-size: 14px;
+    height: 100%;
 }
 
-body {
-  height      : 100vh;
-  padding     : 1rem;
-  color       : $green;
-  background  : $black-l1;
-  font-family : 'Oswald,
+body
+{
+    font-family: 'Oswald,
                 Roboto',
-                sans-serif;
-  font-size   : 16px;
-  font-weight : 500;
+    sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 100vh;
+    padding: 1rem;
+    color: $green;
+    background: $black-l1;
 }
 
-h2 {
-  font-size : 1rem;
-}
-
-.Intro ul {
-  display         : flex;
-  margin          : 0 auto;
-  text-align      : left;
-  justify-content : space-around;
-
-  .projet {
-    margin-top     : 1rem;
-    flex-direction : column;
-    flex-grow      : 1;
-
-    li {
-      padding-top   : .5rem;
-      border-bottom : 1px solid rgba($green,.3);
-    }
-
+nav.menu {
+  transform:translateY(-63px);
+  i {
+    font-size: 2rem;
+  }
     ul {
-      padding        : 1rem;
-      flex-direction : column;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
     }
-  }
+
 }
 
-time {
-  font-weight : bold;
+h2
+{
+    font-size: .85rem;
+    margin: 0;
+    &.footer {
+        font-weight: light;
+        padding: .2rem 1.5rem;
+        border-bottom: 1px solid rgba($green,.1);
+    }
 }
 
-a.texte {
-  text-decoration : none;
-  flex-direction  : column;
+.Intro {
+    width: 85%;
+    margin: 0 auto;
+    transform: translateY(15vh);
+}
+.Intro ul:first-child {
+    display: flex;
+    margin: 0 auto;
+    text-align: left;
+    justify-content: space-around;
+
+    .projet {
+        flex-direction: column;
+        margin-top: 1rem;
+        padding: 0 4rem;
+        flex-grow: 1;
+        h3 {
+            border-top: 4px solid;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+            i
+            {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+        }
+        li {
+            padding-top: .5rem;
+            border-bottom: 1px solid rgba($green,.1);
+        }
+
+        ul
+        {
+            flex-direction: column;
+            padding: 1rem;
+            padding-left: 0;
+        }
+    }
 }
 
-a.bt-slim {
-  display                    : inline-block;
-  position                   : relative;
-  padding                    : .25rem;
-  color                      : $green;
-  text-decoration            : none;
-  font-weight                : 500 !important;
-  -moz-osx-font-smoothing    : grayscale;
-  line-height                : 1rem;
-  transition-property        : background transform;
-  transition-duration        : 0.3s;
-  transition-timing-function : ease-in-out;
-  &:hover {
-    color: $black-l1;
-    transform : perspective(500px) translate3d(5px,0px,200px);
-  }
+time
+{
+    font-weight: bold;
+}
 
-  &:after {
-    content                    : "";
-    display                    : block;
-    margin-top:                        -1rem;
-    width                      : 0;
-    height                     : 1.2rem;
-    background                 : transparent;
-    transition-property        : width background;
-    transition-duration        : 0.3s;
-    transition-timing-function : ease-in-out;
-  }
+a.bt-slim
+{
+    font-size: 1rem;
+    font-weight: bold !important;
+    line-height: 1rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: .25rem;
+    transition-timing-function: ease-in-out;
+    transition-duration: .3s;
+    transition-property: background transform;
+    text-decoration: none;
+    color: $green;
 
-  &:hover:after {
-    width      : 100%;
-    background : $green;
-  }
+    -moz-osx-font-smoothing: grayscale;
+    &:hover
+    {
+        color: $black-l1;
+    }
+
+    &:after
+    {
+        display: block;
+        width: 0;
+        height: 1.2rem;
+        margin-top: calc((-1rem) - 6px);
+        margin-left: -.25rem;
+        padding: 5px;
+        content: '';
+        transition-timing-function: ease-in-out;
+        transition-duration: .3s;
+        transition-property: width background;
+        background: transparent;;
+    }
+
+    &:hover:after
+    {
+        width: 100%;
+
+        background: $green;
+    }
 }
 
 // Gallerie des projets
 
-#GRD {
-  z-index          : 2;
-  display          : flex;
-  position         : fixed;
-  top              : 0;
-  width            : 100vw;
-  height           : 100vh;
-  background-color : $black-l1;
-  align-items      : center;
-  justify-content  : center;
-  transform        : translateX(calc(-100% - 1rem));
-  transition       : transform .6s ease-in-out;
-
-  &.GRD_opened {
-    transform : translateX(-1rem);
-  }
+#GRD
+{
+    z-index: -2;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    transition:all .4s ease-in-out;
+    transform: scale(1.5);
+    opacity: 0;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    &.GRD_opened
+    {
+        background-color: $black-l1;
+        transform: scale(1);
+        z-index: 1;
+        opacity: 1;
+        .bt_close {
+          top:15vh;
+        }
+    }
 }
 
-.bt_close {
-  @include     fa ($fa-long-arrow-right, white, 40px);
-  position   : fixed;
-  top        : 20px;
-  right      : 20px;
-  transition : transform .6s ease-in-out;
+.bt_close
+{
+    position: fixed;
+    top:0;
+    left: 50vw;
 
-  &:hover {
-    transform : rotate(-180deg);
-    cursor    : pointer;
-  }
+    transition: top .6s ease-in-out;
+    transform-origin: center;
+    font-size: 2rem;
+
+    &:hover
+    {
+        cursor: pointer;
+    }
 }
 
 @media only screen
-       and (max-device-width : 480px) {
+       and (max-device-width : 480px)
+{
 }
