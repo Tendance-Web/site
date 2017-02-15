@@ -2279,16 +2279,24 @@ body {
   color: #bcee8a;
   background: rgba(13, 13, 13, 0.85);
   font-family: "Oswald,\a                 Roboto", sans-serif;
+  font-size: 16px;
   font-weight: 500; }
 
+h2 {
+  font-size: 1rem; }
+
 .Intro ul {
+  display: flex;
   margin: 0 auto;
   text-align: left;
-  display: flex;
   justify-content: space-around; }
   .Intro ul .projet {
     margin-top: 1rem;
-    flex-direction: column; }
+    flex-direction: column;
+    flex-grow: 1; }
+    .Intro ul .projet li {
+      padding-top: .5rem;
+      border-bottom: 1px solid rgba(188, 238, 138, 0.3); }
     .Intro ul .projet ul {
       padding: 1rem;
       flex-direction: column; }
@@ -2303,22 +2311,24 @@ a.texte {
 a.bt-slim {
   display: inline-block;
   position: relative;
-  margin-bottom: 3px;
   padding: .25rem;
   color: #bcee8a;
   text-decoration: none;
   font-weight: 500 !important;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1rem;
-  transition-property: background;
+  transition-property: background transform;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out; }
+  a.bt-slim:hover {
+    color: rgba(13, 13, 13, 0.85);
+    transform: perspective(500px) translate3d(5px, 0px, 200px); }
   a.bt-slim:after {
     content: "";
     display: block;
+    margin-top: -1rem;
     width: 0;
-    height: 1px;
-    margin-top: .5rem;
+    height: 1.2rem;
     background: transparent;
     transition-property: width background;
     transition-duration: 0.3s;
@@ -2354,7 +2364,7 @@ a.bt-slim {
   right: 20px;
   transition: transform .6s ease-in-out; }
   .bt_close:hover {
-    cursor: pointer;
-    transform: rotate(-180deg); }
+    transform: rotate(-180deg);
+    cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

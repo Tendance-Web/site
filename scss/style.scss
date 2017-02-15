@@ -4,14 +4,10 @@
         "includes/base",
         "../node_modules/fontawesome-scss/fontAwesome";
 
-
-
-
 html {
   height    : 100%;
   font-size : 14px;
 }
-
 
 body {
   height      : 100vh;
@@ -21,21 +17,33 @@ body {
   font-family : 'Oswald,
                 Roboto',
                 sans-serif;
+  font-size   : 16px;
   font-weight : 500;
 }
 
+h2 {
+  font-size : 1rem;
+}
+
 .Intro ul {
-  margin     : 0 auto;
-  text-align : left;
-  display: flex;
-  justify-content: space-around;
+  display         : flex;
+  margin          : 0 auto;
+  text-align      : left;
+  justify-content : space-around;
+
   .projet {
-    margin-top : 1rem;
-    flex-direction: column;
+    margin-top     : 1rem;
+    flex-direction : column;
+    flex-grow      : 1;
+
+    li {
+      padding-top   : .5rem;
+      border-bottom : 1px solid rgba($green,.3);
+    }
 
     ul {
-      padding : 1rem;
-      flex-direction: column;
+      padding        : 1rem;
+      flex-direction : column;
     }
   }
 }
@@ -46,29 +54,32 @@ time {
 
 a.texte {
   text-decoration : none;
-  flex-direction: column;
+  flex-direction  : column;
 }
 
 a.bt-slim {
   display                    : inline-block;
   position                   : relative;
-  margin-bottom              : 3px;
   padding                    : .25rem;
   color                      : $green;
   text-decoration            : none;
   font-weight                : 500 !important;
   -moz-osx-font-smoothing    : grayscale;
   line-height                : 1rem;
-  transition-property        : background;
+  transition-property        : background transform;
   transition-duration        : 0.3s;
   transition-timing-function : ease-in-out;
+  &:hover {
+    color: $black-l1;
+    transform : perspective(500px) translate3d(5px,0px,200px);
+  }
 
   &:after {
     content                    : "";
     display                    : block;
+    margin-top:                        -1rem;
     width                      : 0;
-    height                     : 1px;
-    margin-top                 : .5rem;
+    height                     : 1.2rem;
     background                 : transparent;
     transition-property        : width background;
     transition-duration        : 0.3s;
@@ -93,22 +104,24 @@ a.bt-slim {
   background-color : $black-l1;
   align-items      : center;
   justify-content  : center;
-  transform:translateX(calc(-100% - 1rem));
-  transition: transform .6s ease-in-out;
+  transform        : translateX(calc(-100% - 1rem));
+  transition       : transform .6s ease-in-out;
+
   &.GRD_opened {
-    transform:translateX(-1rem);
+    transform : translateX(-1rem);
   }
 }
 
 .bt_close {
-  @include fa ($fa-long-arrow-right,white,40px);
-  position: fixed;
-  top: 20px;
-  right:20px;
-  transition:transform .6s ease-in-out;
+  @include     fa ($fa-long-arrow-right, white, 40px);
+  position   : fixed;
+  top        : 20px;
+  right      : 20px;
+  transition : transform .6s ease-in-out;
+
   &:hover {
-    cursor: pointer;
-    transform: rotate(-180deg);
+    transform : rotate(-180deg);
+    cursor    : pointer;
   }
 }
 
