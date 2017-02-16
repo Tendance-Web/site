@@ -59,18 +59,18 @@ h2
     justify-content: space-around;
 
     .projet {
-        flex-direction: column;
+        flex-direction: row;
         margin-top: 1rem;
-        padding: 0 4rem;
+        padding: 0 2vw;
         flex-grow: 1;
         h3 {
             border-top: 4px solid;
-            font-size: 2.5rem;
+            font-size: 2vw;
             margin-bottom: 2rem;
             padding-top: 1rem;
             i
             {
-                font-size: 2rem;
+                font-size: 2vw;
                 font-weight: bold;
             }
         }
@@ -107,7 +107,6 @@ a.bt-slim
     transition-property: background transform;
     text-decoration: none;
     color: $green;
-
     -moz-osx-font-smoothing: grayscale;
     &:hover
     {
@@ -132,7 +131,6 @@ a.bt-slim
     &:hover:after
     {
         width: 100%;
-
         background: $green;
     }
 }
@@ -143,46 +141,78 @@ a.bt-slim
 {
     z-index: -2;
     display: flex;
+    flex-direction: column;
     width: 100vw;
-    height: 100vh;
-    transition:all .4s ease-in-out;
-    transform: scale(1.5);
+    transition:all .4s ease-in;
+    transform: scale(1.2);
     opacity: 0;
     background-color: transparent;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    overflow: auto;
+    img {
+      margin-bottom: 2rem;
+      transition:all .4s ease-in-out;
+      transform: scale(1.2);
+      opacity: 0;
+    }
     &.GRD_opened
     {
-        background-color: $black-l1;
+        background-color: $black;
         transform: scale(1);
         z-index: 1;
         opacity: 1;
-        .bt_close {
-          top:15vh;
+        img {
+          transition:all .4s ease-in;
+          transform: scale(1);
+          opacity: 1;
         }
     }
 }
 
-.bt_close
-{
+
+.bt_close {
     position: fixed;
     top:0;
-    left: 50vw;
-
-    transition: top .6s ease-in-out;
-    transform-origin: center;
+    left:0;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    transition: all .1s ease-in-out;
     font-size: 2rem;
-
-    &:hover
-    {
-        cursor: pointer;
+    z-index: -3;
+    background: $black;
+    width: 100%;
+    opacity: 0;
+    padding: 1rem;
+    &.bt_close--show {
+      z-index: 3;
+      opacity: 1;
+      &:hover {
+          cursor: pointer;
+      }
     }
+
 }
 
-@media only screen
-       and (max-device-width : 480px)
-{
+
+
+
+@media only screen and (max-width : 1170px) {
+  .Intro {
+    transform: translateY(1vh);
+    width: 85%;
+    ul:first-child {
+          flex-direction: column;
+          .projet h3 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            i {font-size: 2rem;}
+          }
+    }
+  }
 }
