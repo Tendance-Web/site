@@ -1,218 +1,227 @@
-@import 'includes/reset',
-        'includes/animate',
-        'includes/colors',
-        'includes/base',
-        '../node_modules/fontawesome-scss/fontAwesome';
+@import "includes/reset",
+        "includes/animate",
+        "includes/colors",
+        "includes/base",
+        "includes/animation",
+        "includes/_typo.scss",
+        "includes/_layers.scss",
+        "../node_modules/fontawesome-scss/fontAwesome";
 
-html
-{
-    font-size: 14px;
-    height: 100%;
-}
+html {
+  overflow-x             : hidden;
+  font-size              : 16px;
+  -webkit-font-smoothing : antialiased !important;
 
-body
-{
-    font-family: 'Oswald,
-                Roboto',
-    sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    height: 100vh;
-    padding: 1rem;
-    color: $green;
-    background: $black-l1;
-}
-
-nav.menu {
-  transform:translateY(-63px);
-  i {
-    font-size: 2rem;
+  a {
+    -webkit-font-smoothing : antialiased !important;
   }
-    ul {
-      display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+body {
+  padding     : 0 2rem;
+  color       : $green;
+  background  : $black-l1;
+  font-family : $font-lead;
+  font-size   : 16px;
+  font-weight : 100 !important;
+}
+
+::-webkit-scrollbar {
+  display : none;
+}
+
+// TITRE H1
+
+h1 {
+  font-size   : 2rem;
+  font-weight : 100;
+
+  &.card-title {
+    z-index          : 5;
+    max-width        : 560px;
+    margin-top       : 0;
+    padding          : 2rem 0;
+    opacity          : 1;
+    background-color : $black-l1;
+    text-transform   : uppercase;
+    line-height      : 2.33rem;
+    transform        : translateY(0%);
+    transition       : transform .4s ease-in;
+    // Aimation du titre dans les pages de contenu
+
+    &.disappear {
+      opacity   : 0;
+      transform : translateY(-100%);
     }
 
-}
-
-h2
-{
-    font-size: .85rem;
-    margin: 0;
-    &.footer {
-        font-weight: light;
-        padding: .2rem 1.5rem;
-        border-bottom: 1px solid rgba($green,.1);
+    &:before {
+      border-top : 1px solid;
     }
+  }
 }
 
-.Intro {
-    width: 85%;
-    margin: 0 auto;
-    transform: translateY(15vh);
-}
-.Intro ul:first-child {
-    display: flex;
-    margin: 0 auto;
-    text-align: left;
-    justify-content: space-around;
+// MENU LINK -> PAGES
 
-    .projet {
-        flex-direction: row;
-        margin-top: 1rem;
-        padding: 0 2vw;
-        flex-grow: 1;
-        h3 {
-            border-top: 4px solid;
-            font-size: 2vw;
-            margin-bottom: 2rem;
-            padding-top: 1rem;
-            i
-            {
-                font-size: 2vw;
-                font-weight: bold;
-            }
+.menu {
+  @include         Taille-Visu;
+  z-index        : 1;
+  display        : flex;
+  text-align     : left;
+  flex-direction : column;
+
+  &__content {
+    // Page appelé
+
+    .page ul:first-child {
+      z-index    : 4;
+      position   : relative;
+      top        : $top-menu-page;
+      width      : 100%;
+      max-width  : 560px;
+      background : $black-l1;
+
+      li {
+        top     : $top-item-page;
+        padding : 0;
+
+        &.image {
+          position       : relative;
+          top            : 20px;
+          margin-bottom  : 2rem;
+          padding-bottom : 2rem;
+          border-bottom  : 1px solid $green-light;
+          transition     : transform .8s ease-in;
+          // Animation du contenu en cours
+          // Animation au scroll ou lorsque la fenêtre est chargé sur mobile
+
+          &.top {
+            position  : relative;
+            transform : translateY( -180px);
+          }
+
+          img {
+            width  : 100%;
+            height : 100%;
+          }
         }
-        li {
-            padding-top: .5rem;
-            border-bottom: 1px solid rgba($green,.1);
+        // Classe pour fixer un élément
+
+        &.fixed {
+          z-index    : 12;
+          position   : fixed !important;
+          max-width  : 560px;
+          background : $black-l1;
+          transition : top .5s ease-out;
+
+          &.top {
+            top : 0;
+          }
         }
-
-        ul
-        {
-            flex-direction: column;
-            padding: 1rem;
-            padding-left: 0;
-        }
-    }
-}
-
-time
-{
-    font-weight: bold;
-}
-
-a.bt-slim
-{
-    font-size: 1rem;
-    font-weight: bold !important;
-    line-height: 1rem;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    padding: .25rem;
-    transition-timing-function: ease-in-out;
-    transition-duration: .3s;
-    transition-property: background transform;
-    text-decoration: none;
-    color: $green;
-    -moz-osx-font-smoothing: grayscale;
-    &:hover
-    {
-        color: $black-l1;
-    }
-
-    &:after
-    {
-        display: block;
-        width: 0;
-        height: 1.2rem;
-        margin-top: calc((-1rem) - 6px);
-        margin-left: -.25rem;
-        padding: 5px;
-        content: '';
-        transition-timing-function: ease-in-out;
-        transition-duration: .3s;
-        transition-property: width background;
-        background: transparent;;
-    }
-
-    &:hover:after
-    {
-        width: 100%;
-        background: $green;
-    }
-}
-
-// Gallerie des projets
-
-#GRD
-{
-    z-index: -2;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    transition:all .4s ease-in;
-    transform: scale(1.2);
-    opacity: 0;
-    background-color: transparent;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: auto;
-    img {
-      margin-bottom: 2rem;
-      transition:all .4s ease-in-out;
-      transform: scale(1.2);
-      opacity: 0;
-    }
-    &.GRD_opened
-    {
-        background-color: $black;
-        transform: scale(1);
-        z-index: 1;
-        opacity: 1;
-        img {
-          transition:all .4s ease-in;
-          transform: scale(1);
-          opacity: 1;
-        }
-    }
-}
-
-
-.bt_close {
-    position: fixed;
-    top:0;
-    left:0;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    justify-content: center;
-    transition: all .1s ease-in-out;
-    font-size: 2rem;
-    z-index: -3;
-    background: $black;
-    width: 100%;
-    opacity: 0;
-    padding: 1rem;
-    &.bt_close--show {
-      z-index: 3;
-      opacity: 1;
-      &:hover {
-          cursor: pointer;
       }
     }
-
+  }
 }
 
+// Liste des projets réalisés
 
+.projet {
+  margin-top : 3rem;
 
+  &:first-child {
+    margin-top : 0;
+  }
 
-@media only screen and (max-width : 1170px) {
-  .Intro {
-    transform: translateY(1vh);
-    width: 85%;
-    ul:first-child {
-          flex-direction: column;
-          .projet h3 {
-            margin-bottom: 1rem;
-            font-size: 2rem;
-            i {font-size: 2rem;}
-          }
+  li {
+    display       : flex;
+    padding-top   : .5rem;
+    border-bottom : $green-light 1px solid;
+    font-family   : $font-lead;
+  }
+}
+
+ul.menu__content:first-child {
+  display : none;
+}
+
+// Titre de catégorie
+
+.projet {
+  h2 {
+    @include       titre-liste;
+    display      : block;
+    width        : 100%;
+    padding      : 1rem 0;
+    padding-left : 0;
+    border-top   : 1px solid;
+    font-size    : 2rem;
+    font-weight  : 500;
+  }
+
+  h3 {
+    @include titre-liste;
+  }
+}
+
+// Liens
+
+// Liens -- Liste
+
+a.bt-slim {
+  @include                     titre-liste;
+  transition-property        : background transform;
+  transition-duration        : .3s;
+  transition-timing-function : ease-in-out;
+
+  &:hover {
+    color : $black-l1;
+  }
+
+  &:after {
+    content                    : '';
+    display                    : block;
+    width                      : 0;
+    height                     : 1.2rem;
+    margin-top                 : calc((-1rem) - 6px);
+    margin-left                : -.25rem;
+    padding                    : 5px;
+    background                 : transparent;
+    transition-property        : width background;
+    transition-duration        : .1s;
+    transition-timing-function : cubic-bezier(.17,.67,.1,.67);
+  }
+
+  &:hover:after {
+    width      : 100%;
+    background : $green;
+  }
+}
+
+// Liens -- fermeture page encours
+
+.bt_close {
+  position   : fixed;
+  opacity    : 0;
+  font-size  : 2rem;
+  transition : all .1s ease-in-out;
+
+  &.bt_close--show {
+    z-index  : 3;
+    position : relative;
+    opacity  : 1;
+
+    &:hover {
+      cursor : pointer;
     }
+  }
+}
+
+// Mediaqueries
+
+@media only screen
+       and (max-width : 620px) {
+  h1.card-title {
+    width          : 90%;
+    padding-bottom : 1rem;
+    font-size      : 1.8rem;
   }
 }
