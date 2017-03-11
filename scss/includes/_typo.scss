@@ -1,0 +1,14 @@
+$font-lead : 'Roboto', 'Oswald', sans-serif;
+$font-corps : 'Oswald', 'Roboto', sans-serif;
+
+@mixin titre-liste {
+  position                   : relative;
+  width                      : 100%;
+  color                      : $green-dark;
+  text-decoration            : none;
+  font-size                  : 1rem;
+  -moz-osx-font-smoothing    : grayscale;
+  line-height                : 1rem;
+  margin-top: 0;
+  align-self: center;
+}
