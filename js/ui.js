@@ -1,6 +1,6 @@
 $(document).ready(function() {
         $('#pageContenu .bt_close').click(function() {
-          location.href = '/';
+          location.href = '../';
         });
 });
 
