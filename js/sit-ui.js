@@ -1,26 +1,34 @@
 $(document).ready(function() {
 
-function ClassScroll() {
   $(window).scroll(function() {
-    $('h1.card-title').addClass('disappear');
-    $('.page .fixed').addClass('top');
+    $('#pageContenu h1.card-title').addClass('disappear');
+    $('#pageContenu .page .fixed').addClass('top');
     $('li:first-child .image').addClass('top');
   });
-}
 
-function WindowTest() {
+    $('#pageContenu .bt_close').click(function() {
+      location.href = '/';
+    })
 
-        // Test de la largeur de la fenêtre
-        var windowWidth= $(window).width();
+    function ClassScroll() {
+      $(window).scroll(function() {
+        $('h1.card-title.on-scroll-disappear').addClass('disappear');
+        $('.page .fixed').addClass('top');
+        $('li:first-child .image').addClass('top');
+      });
+    }
+    function WindowTest() {
 
-        if(windowWidth < 520){
-          $('h1.card-title').addClass('disappear');
-          $('.page .fixed').addClass('top');
-          $('li:first-child .image').addClass('top');
-        }
+            // Test de la largeur de la fenêtre
+            var windowWidth= $(window).width();
 
-}
+            if(windowWidth < 520){
+              $('h1.card-title').addClass('disappear');
+              $('.page .fixed').addClass('top');
+              $('li:first-child .image').addClass('top');
+            }
 
+    }
 
   // Ouverture section GRD
     $('.open_GRD').click(function() {
@@ -32,28 +40,43 @@ function WindowTest() {
 
               // Rechargement du menu de la page d'accueil
               $('.bt_close').click(function() {
+
                   $('nav h1.card-title').next().append().load( "../bloc_html/menu__content.html");
                   location.reload();
               });
             });
     });
 
-            // Ouverture section GE
-              $('.open_GE').click(function() {
-              $('nav h1.card-title').next().append().load( "../bloc_html/GE.html",function() {
+// Ouverture section GE
+  $('.open_GE').click(function() {
+  $('nav h1.card-title').next().append().load( "../bloc_html/GE.html",function() {
+    // Chargement des fonctions de test
+    ClassScroll();
+    WindowTest();
+    // Rechargement du menu de la page accueil
+            $('.bt_close').click(function() {
+                $('nav h1.card-title').next().append().load( "../bloc_html/menu__content.html");
+                location.reload();
+            });
 
+  });
+  });
 
-                // Chargement des fonctions de test
-                ClassScroll();
-                WindowTest();
-                // Rechargement du menu de la page accueil
-                        $('.bt_close').click(function() {
-                            $('nav h1.card-title').next().append().load( "../bloc_html/menu__content.html");
-                            location.reload();
-                        });
-
+  // Ouverture section GE
+    $('.open_VITALITY').click(function() {
+    $('nav h1.card-title').next().append().load( "../bloc_html/VITALITY.html",function() {
+      // Chargement des fonctions de test
+      ClassScroll();
+      WindowTest();
+      // Rechargement du menu de la page accueil
+              $('.bt_close').click(function() {
+                  $('nav h1.card-title').next().append().load( "../bloc_html/menu__content.html");
+                  location.reload();
               });
-              });
+
+    });
+    });
+
 
 
 });

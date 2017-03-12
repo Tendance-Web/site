@@ -24,17 +24,27 @@ body {
   font-family : $font-lead;
   font-size   : 16px;
   font-weight : 100 !important;
+  animation-name: alpha;
+  animation-duration: .5s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
 }
 
 ::-webkit-scrollbar {
   display : none;
 }
 
-// TITRE H1
+// TITRE H1 PAGE COTENU
+#pageContenu h1.card-title {
+  font-size   : 1.2rem;
+    line-height      : 1.33rem;
+    opacity: .4;
+    padding          : 1rem 0;
+}
 
+// TITRE H1 HOME
 h1 {
   font-size   : 2rem;
-  font-weight : 100;
 
   &.card-title {
     z-index          : 5;
@@ -45,14 +55,6 @@ h1 {
     background-color : $black-l1;
     text-transform   : uppercase;
     line-height      : 2.33rem;
-    transform        : translateY(0%);
-    transition       : transform .4s ease-in;
-    // Aimation du titre dans les pages de contenu
-
-    &.disappear {
-      opacity   : 0;
-      transform : translateY(-100%);
-    }
 
     &:before {
       border-top : 1px solid;
@@ -74,48 +76,33 @@ h1 {
 
     .page ul:first-child {
       z-index    : 4;
-      position   : relative;
+      // position   : relative;
       top        : $top-menu-page;
       width      : 100%;
       max-width  : 560px;
       background : $black-l1;
 
       li {
-        top     : $top-item-page;
         padding : 0;
 
         &.image {
-          position       : relative;
-          top            : 20px;
           margin-bottom  : 2rem;
           padding-bottom : 2rem;
           border-bottom  : 1px solid $green-light;
-          transition     : transform .8s ease-in;
-          // Animation du contenu en cours
-          // Animation au scroll ou lorsque la fenêtre est chargé sur mobile
 
-          &.top {
-            position  : relative;
-            transform : translateY( -180px);
-          }
-
+          .w100 {width: 100%}
           img {
-            width  : 100%;
+            width  : auto;
             height : 100%;
+            margin: 0 auto;
           }
         }
-        // Classe pour fixer un élément
-
-        &.fixed {
+        // Titre d'une page de contenu
+        &.to-fix {
           z-index    : 12;
-          position   : fixed !important;
           max-width  : 560px;
           background : $black-l1;
-          transition : top .5s ease-out;
 
-          &.top {
-            top : 0;
-          }
         }
       }
     }
@@ -217,11 +204,27 @@ a.bt-slim {
 
 // Mediaqueries
 
-@media only screen
-       and (max-width : 620px) {
-  h1.card-title {
-    width          : 90%;
-    padding-bottom : 1rem;
-    font-size      : 1.8rem;
-  }
+@media only screen and (max-width : 620px) {
+        h1.card-title {
+          margin-bottom: 0rem;
+        }
+
+
+        // TITRE H1 PAGE COTENU
+        #pageContenu h1.card-title {
+          font-size   : 1.2rem;
+            line-height      : 1.33rem;
+            opacity: .4;
+            padding          : 1rem 0;
+            
+        }
+
+        .menu__content .page ul:first-child li.image {
+          img {
+            width: 100%;
+          }
+          &.top {
+            transform: translateY(-280px);
+          }
+        }
 }

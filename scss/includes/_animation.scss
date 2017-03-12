@@ -26,3 +26,13 @@ transform:scale(1);
 opacity: 1;
 }
 }
+
+@keyframes alpha {
+0% {
+opacity: 0;
+}
+
+100% {
+opacity: 1;
+}
+}
