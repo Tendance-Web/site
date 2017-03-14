@@ -2300,7 +2300,7 @@ html {
 
 body {
   padding: 0 2rem;
-  color: #00b04d;
+  color: #bcee8a;
   background: #1a1a1a;
   font-family: "Roboto", "Oswald", sans-serif;
   font-size: 16px;
@@ -2316,7 +2316,7 @@ body {
 
 .a-venir {
   font-style: italic;
-  color: rgba(0, 176, 77, 0.6); }
+  color: rgba(188, 238, 138, 0.6); }
 
 #pageContenu h1.card-title {
   font-size: 1.2rem;
@@ -2386,7 +2386,7 @@ h1 {
       .menu__content .page ul:first-child li.image {
         margin-bottom: 2rem;
         padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(0, 176, 77, 0.13);
+        border-bottom: 1px solid rgba(188, 238, 138, 0.13);
         display: inherit; }
         .menu__content .page ul:first-child li.image .w100 {
           width: 100%; }
@@ -2409,7 +2409,7 @@ h1 {
   .projet li {
     display: flex;
     padding-top: .5rem;
-    border-bottom: rgba(0, 176, 77, 0.13) 1px solid;
+    border-bottom: rgba(188, 238, 138, 0.13) 1px solid;
     font-family: "Roboto", "Oswald", sans-serif; }
     .projet li:last-child {
       border: 0; }
@@ -2423,7 +2423,7 @@ h1 {
 .projet h2 {
   position: relative;
   width: 100%;
-  color: #02fa6e;
+  color: #bcee8a;
   text-decoration: none;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
@@ -2434,13 +2434,13 @@ h1 {
   width: 100%;
   padding: 1rem 0;
   padding-left: 0;
-  border-top: 1px solid #24ff83;
+  border-top: 1px solid #bcee8a;
   font-size: 2rem;
   font-weight: 500; }
 .projet h3 {
   position: relative;
   width: 100%;
-  color: #02fa6e;
+  color: #bcee8a;
   text-decoration: none;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
@@ -2453,14 +2453,14 @@ h1 {
 a.bt-slim {
   position: relative;
   width: 100%;
-  color: #02fa6e;
+  color: #bcee8a;
   text-decoration: none;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1rem;
   margin-top: 0;
   align-self: center;
-  color: #24ff83;
+  color: #bcee8a;
   transition-property: background transform;
   transition-duration: .3s;
   transition-timing-function: ease-in-out; }
@@ -2481,7 +2481,7 @@ a.bt-slim {
     transition-timing-function: cubic-bezier(0.17, 0.67, 0.1, 0.67); }
   a.bt-slim:hover:after {
     width: 100%;
-    background: #00b04d;
+    background: #bcee8a;
     background: #ff5c2c; }
 
 .bt_close {
