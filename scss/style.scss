@@ -7,6 +7,7 @@
         "includes/_layers.scss",
         "../node_modules/fontawesome-scss/fontAwesome";
 
+// General
 html {
   overflow-x             : hidden;
   font-size              : 16px;
@@ -16,7 +17,6 @@ html {
     -webkit-font-smoothing : antialiased !important;
   }
 }
-
 body {
   padding     : 0 2rem;
   color       : $green;
@@ -28,12 +28,17 @@ body {
   animation-duration: .5s;
   animation-delay: 0s;
   animation-timing-function: ease-in;
+  padding-bottom: 3rem;
 }
-
 ::-webkit-scrollbar {
   display : none;
 }
+.a-venir {
+  font-style: italic;
+  color:rgba($green,.6);
+}
 
+// PARTIE CONTENU DES PAGES
 // TITRE H1 PAGE COTENU
 #pageContenu h1.card-title {
   font-size   : 1.2rem;
@@ -41,11 +46,41 @@ body {
     opacity: .4;
     padding          : 1rem 0;
 }
+.page #sticky-wrapper {
+  margin-bottom: 1rem;
+  z-index: 6;
+  position: relative;
+}
+
+video {
+  z-index: 1;
+  position: relative;
+}
+
+//  LIEN ENTETE PAGE CONTENU AVEC TITRE
+h3 a {
+  text-decoration: none;
+  padding: .2rem .4rem;
+  align-self: center;
+  background: $orange-v2;
+  color: $black-l1;
+  transition: all .2s ease-out;
+  border-radius: 3px;
+  margin-left: .5rem;
+  &:hover {
+    color: $orange-v2;
+    background: rgba($orange-v2,.1);
+  }
+}
+h3 i {
+  transform: translateX(1px);
+  position: relative;
+  top: 2px;
+}
 
 // TITRE H1 HOME
 h1 {
   font-size   : 2rem;
-
   &.card-title {
     z-index          : 5;
     max-width        : 560px;
@@ -63,38 +98,34 @@ h1 {
 }
 
 // MENU LINK -> PAGES
-
 .menu {
   @include         Taille-Visu;
   z-index        : 1;
   display        : flex;
   text-align     : left;
   flex-direction : column;
-
   &__content {
-    // Page appelé
 
+    // Page appelé
     .page ul:first-child {
       z-index    : 4;
-      // position   : relative;
       top        : $top-menu-page;
       width      : 100%;
       max-width  : 560px;
       background : $black-l1;
-
       li {
         padding : 0;
-
         &.image {
           margin-bottom  : 2rem;
           padding-bottom : 2rem;
           border-bottom  : 1px solid $green-light;
-
+          display: inherit;
           .w100 {width: 100%}
           img {
             width  : auto;
             height : 100%;
             margin: 0 auto;
+            display: block;
           }
         }
         // Titre d'une page de contenu
@@ -102,7 +133,8 @@ h1 {
           z-index    : 12;
           max-width  : 560px;
           background : $black-l1;
-
+          padding-bottom: .5rem;
+          padding-top: 0.8rem;
         }
       }
     }
@@ -110,28 +142,28 @@ h1 {
 }
 
 // Liste des projets réalisés
-
 .projet {
-  margin-top : 3rem;
-
-  &:first-child {
-    margin-top : 0;
-  }
-
+  margin-top : 1.8rem;
+  &:first-child {margin-top : 0;}
   li {
     display       : flex;
     padding-top   : .5rem;
     border-bottom : $green-light 1px solid;
     font-family   : $font-lead;
+    &:last-child {
+      border:0;
+    }
   }
 }
 
-ul.menu__content:first-child {
-  display : none;
+.projet li:last-child.special {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding: .8rem 0;
+  text-align: center;
 }
 
 // Titre de catégorie
-
 .projet {
   h2 {
     @include       titre-liste;
@@ -139,30 +171,30 @@ ul.menu__content:first-child {
     width        : 100%;
     padding      : 1rem 0;
     padding-left : 0;
-    border-top   : 1px solid;
+    border-top   : 1px solid $green-v3;
     font-size    : 2rem;
     font-weight  : 500;
   }
-
   h3 {
     @include titre-liste;
   }
+  i {
+    transform: translateY(4px);
+  }
 }
 
-// Liens
-
+// Liens /////////////////////////////
 // Liens -- Liste
-
 a.bt-slim {
   @include                     titre-liste;
+  color:$green-v3;
   transition-property        : background transform;
   transition-duration        : .3s;
   transition-timing-function : ease-in-out;
-
   &:hover {
     color : $black-l1;
+    font-weight: bold;
   }
-
   &:after {
     content                    : '';
     display                    : block;
@@ -176,15 +208,14 @@ a.bt-slim {
     transition-duration        : .1s;
     transition-timing-function : cubic-bezier(.17,.67,.1,.67);
   }
-
   &:hover:after {
     width      : 100%;
     background : $green;
+    background: $orange-v2;
   }
 }
 
-// Liens -- fermeture page encours
-
+// Bouton -- fermeture page encours
 .bt_close {
   position   : fixed;
   opacity    : 0;
@@ -202,8 +233,8 @@ a.bt-slim {
   }
 }
 
-// Mediaqueries
 
+// Mediaqueries
 @media only screen and (max-width : 620px) {
         h1.card-title {
           margin-bottom: 0rem;
@@ -216,12 +247,12 @@ a.bt-slim {
             line-height      : 1.33rem;
             opacity: .4;
             padding          : 1rem 0;
-            
+
         }
 
         .menu__content .page ul:first-child li.image {
           img {
-            width: 100%;
+            width: 50%;
           }
           &.top {
             transform: translateY(-280px);

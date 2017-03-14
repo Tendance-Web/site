@@ -2300,7 +2300,7 @@ html {
 
 body {
   padding: 0 2rem;
-  color: #bcee8a;
+  color: #00b04d;
   background: #1a1a1a;
   font-family: "Roboto", "Oswald", sans-serif;
   font-size: 16px;
@@ -2308,16 +2308,48 @@ body {
   animation-name: alpha;
   animation-duration: .5s;
   animation-delay: 0s;
-  animation-timing-function: ease-in; }
+  animation-timing-function: ease-in;
+  padding-bottom: 3rem; }
 
 ::-webkit-scrollbar {
   display: none; }
+
+.a-venir {
+  font-style: italic;
+  color: rgba(0, 176, 77, 0.6); }
 
 #pageContenu h1.card-title {
   font-size: 1.2rem;
   line-height: 1.33rem;
   opacity: .4;
   padding: 1rem 0; }
+
+.page #sticky-wrapper {
+  margin-bottom: 1rem;
+  z-index: 6;
+  position: relative; }
+
+video {
+  z-index: 1;
+  position: relative; }
+
+h3 a {
+  text-decoration: none;
+  padding: .2rem .4rem;
+  align-self: center;
+  background: #ff5c2c;
+  color: #1a1a1a;
+  transition: all .2s ease-out;
+  border-radius: 3px;
+  margin-left: .5rem; }
+  h3 a:hover {
+    color: #ff5c2c;
+    background: rgba(255, 92, 44, 0.1); }
+
+h3 i {
+  transform: translateX(1px);
+  position: relative;
+  top: 2px; }
 
 h1 {
   font-size: 2rem; }
@@ -2354,35 +2386,44 @@ h1 {
       .menu__content .page ul:first-child li.image {
         margin-bottom: 2rem;
         padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(188, 238, 138, 0.13); }
+        border-bottom: 1px solid rgba(0, 176, 77, 0.13);
+        display: inherit; }
         .menu__content .page ul:first-child li.image .w100 {
           width: 100%; }
         .menu__content .page ul:first-child li.image img {
           width: auto;
           height: 100%;
-          margin: 0 auto; }
+          margin: 0 auto;
+          display: block; }
       .menu__content .page ul:first-child li.to-fix {
         z-index: 12;
         max-width: 560px;
-        background: #1a1a1a; }
+        background: #1a1a1a;
+        padding-bottom: .5rem;
+        padding-top: 0.8rem; }
 
 .projet {
-  margin-top: 3rem; }
+  margin-top: 1.8rem; }
   .projet:first-child {
     margin-top: 0; }
   .projet li {
     display: flex;
     padding-top: .5rem;
-    border-bottom: rgba(188, 238, 138, 0.13) 1px solid;
+    border-bottom: rgba(0, 176, 77, 0.13) 1px solid;
     font-family: "Roboto", "Oswald", sans-serif; }
+    .projet li:last-child {
+      border: 0; }
 
-ul.menu__content:first-child {
-  display: none; }
+.projet li:last-child.special {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding: .8rem 0;
+  text-align: center; }
 
 .projet h2 {
   position: relative;
   width: 100%;
-  color: #bcee8a;
+  color: #02fa6e;
   text-decoration: none;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
@@ -2393,35 +2434,39 @@ ul.menu__content:first-child {
   width: 100%;
   padding: 1rem 0;
   padding-left: 0;
-  border-top: 1px solid;
+  border-top: 1px solid #24ff83;
   font-size: 2rem;
   font-weight: 500; }
 .projet h3 {
   position: relative;
   width: 100%;
-  color: #bcee8a;
+  color: #02fa6e;
   text-decoration: none;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1rem;
   margin-top: 0;
   align-self: center; }
+.projet i {
+  transform: translateY(4px); }
 
 a.bt-slim {
   position: relative;
   width: 100%;
-  color: #bcee8a;
+  color: #02fa6e;
   text-decoration: none;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1rem;
   margin-top: 0;
   align-self: center;
+  color: #24ff83;
   transition-property: background transform;
   transition-duration: .3s;
   transition-timing-function: ease-in-out; }
   a.bt-slim:hover {
-    color: #1a1a1a; }
+    color: #1a1a1a;
+    font-weight: bold; }
   a.bt-slim:after {
     content: '';
     display: block;
@@ -2436,7 +2481,8 @@ a.bt-slim {
     transition-timing-function: cubic-bezier(0.17, 0.67, 0.1, 0.67); }
   a.bt-slim:hover:after {
     width: 100%;
-    background: #bcee8a; }
+    background: #00b04d;
+    background: #ff5c2c; }
 
 .bt_close {
   position: fixed;
@@ -2461,7 +2507,7 @@ a.bt-slim {
     padding: 1rem 0; }
 
   .menu__content .page ul:first-child li.image img {
-    width: 100%; }
+    width: 50%; }
   .menu__content .page ul:first-child li.image.top {
     transform: translateY(-280px); } }
 
