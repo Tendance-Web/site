@@ -2335,21 +2335,18 @@ video {
 
 h3 a {
   text-decoration: none;
-  padding: .2rem .4rem;
-  align-self: center;
-  background: #ff5c2c;
+  background: #bcee8a;
   color: #1a1a1a;
   transition: all .2s ease-out;
   border-radius: 3px;
-  margin-left: .5rem; }
+  margin-left: .25rem; }
   h3 a:hover {
-    color: #ff5c2c;
-    background: rgba(255, 92, 44, 0.1); }
+    color: #bcee8a;
+    background: #1a1a1a; }
 
-h3 i {
-  transform: translateX(1px);
-  position: relative;
-  top: 2px; }
+.projet h3 a i {
+  transform: translateY(2px);
+  padding: .1rem .2rem; }
 
 h1 {
   font-size: 2rem; }
