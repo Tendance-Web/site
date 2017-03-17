@@ -2510,9 +2510,13 @@ a.bt-slim {
   .bt_close.bt_close--show {
     z-index: 3;
     position: relative;
-    opacity: 1; }
+    opacity: 1;
+    line-height: 2.5rem;
+    border-radius: 5px; }
     .bt_close.bt_close--show:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      background: #bcee8a;
+      color: #1a1a1a; }
 
 @media only screen and (max-width: 620px) {
   h1.card-title {

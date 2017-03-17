@@ -232,9 +232,12 @@ a.bt-slim {
     z-index  : 3;
     position : relative;
     opacity  : 1;
-
+    line-height: 2.5rem;
+    border-radius: 5px;
     &:hover {
       cursor : pointer;
+      background: $green;
+      color: $black-l1;
     }
   }
 }
