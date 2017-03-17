@@ -1,0 +1,14 @@
+.u-display-inherit {
+  display: inherit !important ;
+}
+.date {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid $green-light;
+  i {padding-right: .4rem;}
+}
+.societe {
+  font-weight: 900;
+}

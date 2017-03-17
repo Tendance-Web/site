@@ -2290,6 +2290,21 @@ code {
     opacity: 0; }
   100% {
     opacity: 1; } }
+.u-display-inherit {
+  display: inherit !important; }
+
+.date {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(188, 238, 138, 0.13); }
+  .date i {
+    padding-right: .4rem; }
+
+.societe {
+  font-weight: 900; }
+
 html {
   overflow-x: hidden;
   font-size: 16px;
@@ -2411,10 +2426,18 @@ h1 {
       border: 0; }
 
 .projet li:last-child.special {
-  border-bottom: 1px solid;
+  border: 1px solid;
   border-top: 1px solid;
   padding: .8rem 0;
   text-align: center; }
+  .projet li:last-child.special a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .4s ease-out; }
+  .projet li:last-child.special a:hover {
+    background: #bcee8a;
+    color: #1a1a1a;
+    text-decoration: none; }
 
 .projet h2 {
   position: relative;

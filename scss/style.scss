@@ -5,6 +5,7 @@
         "includes/animation",
         "includes/_typo.scss",
         "includes/_layers.scss",
+        "includes/_util.scss",
         "../node_modules/fontawesome-scss/fontAwesome";
 
 // General
@@ -12,7 +13,6 @@ html {
   overflow-x             : hidden;
   font-size              : 16px;
   -webkit-font-smoothing : antialiased !important;
-
   a {
     -webkit-font-smoothing : antialiased !important;
   }
@@ -154,10 +154,20 @@ h1 {
 }
 
 .projet li:last-child.special {
-  border-bottom: 1px solid;
+  border: 1px solid;
   border-top: 1px solid;
   padding: .8rem 0;
   text-align: center;
+  a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .4s ease-out;
+  }
+  a:hover {
+    background:$green-v3;
+    color: $black-l1;
+    text-decoration: none;
+  }
 }
 
 // Titre de catégorie
