@@ -2219,7 +2219,6 @@ h4,
 h5,
 h6 {
   /* Change heading typefaces here */
-  font-family: sans-serif;
   margin-top: 1.5rem;
   margin-bottom: 0;
   line-height: 1.5rem; }
@@ -2462,8 +2461,7 @@ a.bt-slim {
   transition-duration: .3s;
   transition-timing-function: ease-in-out; }
   a.bt-slim:hover {
-    color: #1a1a1a;
-    font-weight: bold; }
+    color: #1a1a1a; }
   a.bt-slim:after {
     content: '';
     display: block;
