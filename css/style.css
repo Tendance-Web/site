@@ -2330,7 +2330,8 @@ body {
 
 .a-venir {
   font-style: italic;
-  color: rgba(188, 238, 138, 0.6); }
+  color: rgba(188, 238, 138, 0.6);
+  padding: .5rem .8rem; }
 
 #pageContenu h1.card-title {
   font-size: 1.2rem;
@@ -2423,19 +2424,16 @@ h1 {
     margin-top: 0; }
   .projet li {
     display: flex;
-    padding-top: .3rem;
     border-bottom: rgba(188, 238, 138, 0.13) 1px solid;
     font-family: "Roboto", "Oswald", sans-serif;
-    transition: background .5s ease-in-out;
-    padding-left: .5rem; }
+    transition: background .5s ease-in-out; }
     .projet li:hover {
       background: rgba(188, 238, 138, 0.04); }
     .projet li:last-child {
       border: 0; }
 
 .projet li:last-child.special {
-  border: 1px solid;
-  border-top: 1px solid;
+  border: 1px solid rgba(188, 238, 138, 0.2);
   padding: .8rem 0;
   text-align: center; }
   .projet li:last-child.special a {
@@ -2450,45 +2448,40 @@ h1 {
 .projet h2 {
   position: relative;
   width: 100%;
-  margin-top: 0;
-  color: rgba(188, 238, 138, 0.75);
+  color: #bcee8a;
   text-decoration: none;
   align-self: center;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1rem;
-  display: block;
-  line-height: 1rem;
   margin-top: 0;
   display: inline-block;
-  padding: .8rem .6rem;
-  border: 1px solid rgba(188, 238, 138, 0.3);
+  padding: .5rem .8rem;
+  line-height: inherit;
+  border-bottom: 1px solid rgba(188, 238, 138, 0.5);
+  background: rgba(188, 238, 138, 0.025);
+  border-bottom-width: 2px;
   font-size: 1.5rem;
-  font-weight: 100;
-  margin-bottom: .5rem; }
+  font-weight: 100; }
 .projet h3 {
   position: relative;
   width: 100%;
-  margin-top: 0;
-  color: rgba(188, 238, 138, 0.75);
+  color: #bcee8a;
   text-decoration: none;
   align-self: center;
   font-size: 1rem;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1rem; }
+  -moz-osx-font-smoothing: grayscale; }
 .projet i {
   transform: translateY(2px); }
 
 a.bt-slim {
   position: relative;
   width: 100%;
-  margin-top: 0;
-  color: rgba(188, 238, 138, 0.75);
+  color: #bcee8a;
   text-decoration: none;
   align-self: center;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1rem;
+  padding: .5rem .8rem;
   color: #bcee8a;
   transition-property: all;
   transition-duration: .3s;
@@ -2496,21 +2489,6 @@ a.bt-slim {
   a.bt-slim:hover {
     color: #bcee8a;
     transform: translateX(5px); }
-  a.bt-slim:after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1.1rem;
-    margin-top: calc((-1rem) - 6px);
-    margin-left: -.25rem;
-    padding: 5px;
-    background: transparent;
-    transition-property: width, background;
-    transition-duration: .3s;
-    transition-timing-function: cubic-bezier(0.3, 0.35, 0.57, 0.61);
-    padding-right: 0; }
-  a.bt-slim:hover:after {
-    width: auto; }
 
 .bt_close {
   position: fixed;
