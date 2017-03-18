@@ -2353,17 +2353,20 @@ h3 a {
   color: #1a1a1a;
   transition: all .2s ease-out;
   border-radius: 3px;
-  margin-left: .25rem; }
+  margin-left: .25rem;
+  color: #bcee8a;
+  background: #1a1a1a;
+  border: 1px solid rgba(188, 238, 138, 0.2); }
   h3 a:hover {
-    color: #bcee8a;
-    background: #1a1a1a; }
+    background: #bcee8a;
+    color: #1a1a1a; }
 
 .projet h3 a i {
   transform: translateY(2px);
   padding: .1rem .2rem; }
 
 h1 {
-  font-size: 2rem; }
+  font-size: 1.7rem; }
   h1.card-title {
     z-index: 5;
     max-width: 560px;
@@ -2372,7 +2375,8 @@ h1 {
     opacity: 1;
     background-color: #1a1a1a;
     text-transform: uppercase;
-    line-height: 2.33rem; }
+    line-height: 2rem;
+    font-weight: 100; }
     h1.card-title:before {
       border-top: 1px solid; }
 
@@ -2419,9 +2423,13 @@ h1 {
     margin-top: 0; }
   .projet li {
     display: flex;
-    padding-top: .5rem;
+    padding-top: .3rem;
     border-bottom: rgba(188, 238, 138, 0.13) 1px solid;
-    font-family: "Roboto", "Oswald", sans-serif; }
+    font-family: "Roboto", "Oswald", sans-serif;
+    transition: background .5s ease-in-out;
+    padding-left: .5rem; }
+    .projet li:hover {
+      background: rgba(188, 238, 138, 0.04); }
     .projet li:last-child {
       border: 0; }
 
@@ -2450,12 +2458,14 @@ h1 {
   margin-top: 0;
   align-self: center;
   display: block;
-  width: 100%;
-  padding: 1rem 0;
-  padding-left: 0;
-  border-top: 1px solid #bcee8a;
-  font-size: 2rem;
-  font-weight: 500; }
+  line-height: 1rem;
+  margin-top: 0;
+  display: inline-block;
+  padding: 0.6rem;
+  border: 1px solid #bcee8a;
+  font-size: 1.7rem;
+  font-weight: 100;
+  margin-bottom: .5rem; }
 .projet h3 {
   position: relative;
   width: 100%;
@@ -2467,7 +2477,7 @@ h1 {
   margin-top: 0;
   align-self: center; }
 .projet i {
-  transform: translateY(4px); }
+  transform: translateY(2px); }
 
 a.bt-slim {
   position: relative;
@@ -2480,43 +2490,48 @@ a.bt-slim {
   margin-top: 0;
   align-self: center;
   color: #bcee8a;
-  transition-property: background transform;
+  transition-property: all;
   transition-duration: .3s;
   transition-timing-function: ease-in-out; }
   a.bt-slim:hover {
-    color: #1a1a1a; }
+    color: #bcee8a;
+    transform: translateX(5px); }
   a.bt-slim:after {
     content: '';
     display: block;
     width: 0;
-    height: 1.2rem;
+    height: 1.1rem;
     margin-top: calc((-1rem) - 6px);
     margin-left: -.25rem;
     padding: 5px;
     background: transparent;
-    transition-property: width background;
-    transition-duration: .1s;
-    transition-timing-function: cubic-bezier(0.17, 0.67, 0.1, 0.67); }
+    transition-property: width, background;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(0.3, 0.35, 0.57, 0.61);
+    padding-right: 0; }
   a.bt-slim:hover:after {
-    width: 100%;
-    background: #bcee8a;
-    background: #ff5c2c; }
+    width: auto; }
 
 .bt_close {
   position: fixed;
   opacity: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: all .1s ease-in-out; }
   .bt_close.bt_close--show {
     z-index: 3;
     position: relative;
     opacity: 1;
-    line-height: 2.5rem;
-    border-radius: 5px; }
+    line-height: 2.5rem; }
+    .bt_close.bt_close--show i {
+      border-radius: 50%;
+      border: 1px solid #bcee8a;
+      color: #bcee8a;
+      transition: all .2s ease-in-out; }
+      .bt_close.bt_close--show i:hover {
+        background: #bcee8a;
+        color: #1a1a1a; }
     .bt_close.bt_close--show:hover {
-      cursor: pointer;
-      background: #bcee8a;
-      color: #1a1a1a; }
+      cursor: pointer; }
 
 @media only screen and (max-width: 620px) {
   h1.card-title {

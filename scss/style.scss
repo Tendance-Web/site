@@ -65,19 +65,26 @@ h3 a {
   transition: all .2s ease-out;
   border-radius: 3px;
   margin-left: .25rem;
+
+  color: $green;
+  background: $black-l1;
+  border: 1px solid rgba($green,.2);
+
   &:hover {
-    color: $green;
-    background: $black-l1;
+        background: $green;
+        color:$black-l1;
   }
 }
+
 .projet h3 a i {
     transform: translateY(2px);
     padding: .1rem .2rem;
 }
 
+
 // TITRE H1 HOME
 h1 {
-  font-size   : 2rem;
+  font-size   : 1.7rem;
   &.card-title {
     z-index          : 5;
     max-width        : 560px;
@@ -86,8 +93,8 @@ h1 {
     opacity          : 1;
     background-color : $black-l1;
     text-transform   : uppercase;
-    line-height      : 2.33rem;
-
+    line-height      : 2rem;
+    font-weight: 100;
     &:before {
       border-top : 1px solid;
     }
@@ -144,9 +151,14 @@ h1 {
   &:first-child {margin-top : 0;}
   li {
     display       : flex;
-    padding-top   : .5rem;
+    padding-top   : .3rem;
     border-bottom : $green-light 1px solid;
     font-family   : $font-lead;
+    transition: background .5s ease-in-out;
+    padding-left: .5rem;
+    &:hover {
+      background: rgba(188, 238, 138, 0.04);
+    }
     &:last-child {
       border:0;
     }
@@ -175,18 +187,20 @@ h1 {
   h2 {
     @include       titre-liste;
     display      : block;
-    width        : 100%;
-    padding      : 1rem 0;
-    padding-left : 0;
-    border-top   : 1px solid $green-v3;
-    font-size    : 2rem;
-    font-weight  : 500;
+    line-height: 1rem;
+    margin-top: 0;
+display: inline-block;
+padding: 0.6rem;
+border: 1px solid #bcee8a;
+font-size: 1.7rem;
+font-weight: 100;
+margin-bottom: .5rem;
   }
   h3 {
     @include titre-liste;
   }
   i {
-    transform: translateY(4px);
+    transform: translateY(2px);
   }
 }
 
@@ -195,29 +209,29 @@ h1 {
 a.bt-slim {
   @include                     titre-liste;
   color:$green-v3;
-  transition-property        : background transform;
+  transition-property        : all;
   transition-duration        : .3s;
   transition-timing-function : ease-in-out;
   &:hover {
-    color : $black-l1;
+    color : $green-v2;
+    transform: translateX(5px);
   }
   &:after {
-    content                    : '';
-    display                    : block;
-    width                      : 0;
-    height                     : 1.2rem;
-    margin-top                 : calc((-1rem) - 6px);
-    margin-left                : -.25rem;
-    padding                    : 5px;
-    background                 : transparent;
-    transition-property        : width background;
-    transition-duration        : .1s;
-    transition-timing-function : cubic-bezier(.17,.67,.1,.67);
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.1rem;
+    margin-top: calc((-1rem) - 6px);
+    margin-left: -.25rem;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0);
+    transition-property: width, background;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(0.3, 0.35, 0.57, 0.61);
+    padding-right: 0;
   }
   &:hover:after {
-    width      : 100%;
-    background : $green;
-    background: $orange-v2;
+    width      : auto;
   }
 }
 
@@ -225,20 +239,24 @@ a.bt-slim {
 .bt_close {
   position   : fixed;
   opacity    : 0;
-  font-size  : 2rem;
+  font-size  : 1.5rem;
   transition : all .1s ease-in-out;
-
   &.bt_close--show {
     z-index  : 3;
     position : relative;
     opacity  : 1;
     line-height: 2.5rem;
-    border-radius: 5px;
-    &:hover {
-      cursor : pointer;
-      background: $green;
-      color: $black-l1;
+    i {
+        border-radius: 50%;
+        border: 1px solid $green;
+        color: $green;
+        transition:all .2s ease-in-out;
+        &:hover {
+          background: $green;
+          color:$black-l1;
+        }
     }
+    &:hover {cursor : pointer;}
   }
 }
 
