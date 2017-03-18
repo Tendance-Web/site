@@ -138,8 +138,8 @@ h1 {
           z-index    : 12;
           max-width  : 560px;
           background : $black-l1;
-          padding-bottom: .5rem;
-          padding-top: 0.8rem;
+
+          padding-top: 0.4rem;
         }
       }
     }
@@ -152,16 +152,16 @@ h1 {
   &:first-child {margin-top : 0;}
   li {
     display       : flex;
-
     border-bottom : $green-light 1px solid;
     font-family   : $font-lead;
     transition: background .5s ease-in-out;
-    &:hover {
-      background: rgba(188, 238, 138, 0.04);
-    }
-    &:last-child {
-      border:0;
-    }
+    &:last-child {border:0;}
+  }
+}
+
+#home {
+  .projet li:hover {
+    background: rgba(188, 238, 138, 0.04);
   }
 }
 
@@ -198,6 +198,7 @@ h1 {
   }
   h3 {
     @include titre-liste;
+    margin-top: 0;
   }
   i {
     transform: translateY(2px);

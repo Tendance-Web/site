@@ -2415,8 +2415,7 @@ h1 {
         z-index: 12;
         max-width: 560px;
         background: #1a1a1a;
-        padding-bottom: .5rem;
-        padding-top: 0.8rem; }
+        padding-top: 0.4rem; }
 
 .projet {
   margin-top: 1.8rem; }
@@ -2427,10 +2426,11 @@ h1 {
     border-bottom: rgba(188, 238, 138, 0.13) 1px solid;
     font-family: "Roboto", "Oswald", sans-serif;
     transition: background .5s ease-in-out; }
-    .projet li:hover {
-      background: rgba(188, 238, 138, 0.04); }
     .projet li:last-child {
       border: 0; }
+
+#home .projet li:hover {
+  background: rgba(188, 238, 138, 0.04); }
 
 .projet li:last-child.special {
   border: 1px solid rgba(188, 238, 138, 0.2);
@@ -2469,7 +2469,8 @@ h1 {
   text-decoration: none;
   align-self: center;
   font-size: 1rem;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 0; }
 .projet i {
   transform: translateY(2px); }
 
