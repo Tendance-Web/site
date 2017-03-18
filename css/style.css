@@ -2450,45 +2450,45 @@ h1 {
 .projet h2 {
   position: relative;
   width: 100%;
-  color: #bcee8a;
+  margin-top: 0;
+  color: rgba(188, 238, 138, 0.75);
   text-decoration: none;
+  align-self: center;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1rem;
-  margin-top: 0;
-  align-self: center;
   display: block;
   line-height: 1rem;
   margin-top: 0;
   display: inline-block;
-  padding: 0.6rem;
-  border: 1px solid #bcee8a;
-  font-size: 1.7rem;
+  padding: .8rem .6rem;
+  border: 1px solid rgba(188, 238, 138, 0.3);
+  font-size: 1.5rem;
   font-weight: 100;
   margin-bottom: .5rem; }
 .projet h3 {
   position: relative;
   width: 100%;
-  color: #bcee8a;
+  margin-top: 0;
+  color: rgba(188, 238, 138, 0.75);
   text-decoration: none;
+  align-self: center;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1rem;
-  margin-top: 0;
-  align-self: center; }
+  line-height: 1rem; }
 .projet i {
   transform: translateY(2px); }
 
 a.bt-slim {
   position: relative;
   width: 100%;
-  color: #bcee8a;
+  margin-top: 0;
+  color: rgba(188, 238, 138, 0.75);
   text-decoration: none;
+  align-self: center;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1rem;
-  margin-top: 0;
-  align-self: center;
   color: #bcee8a;
   transition-property: all;
   transition-duration: .3s;
