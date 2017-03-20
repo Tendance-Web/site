@@ -8,6 +8,18 @@
         "includes/_util.scss",
         "../node_modules/fontawesome-scss/fontAwesome";
 
+
+// Animation en include donc en mixin
+@mixin animation-alpha {
+  animation-name: alpha;
+  animation-duration: .5s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+}
+@mixin transition-h-menu ($prop) {
+  transition: $prop 0.3s cubic-bezier(0.46, 0.17, 0.52, 0.79);
+}
+
 // General
 html {
   overflow-x             : hidden;
@@ -24,62 +36,43 @@ body {
   font-family : $font-lead;
   font-size   : 16px;
   font-weight : 100 !important;
-  animation-name: alpha;
-  animation-duration: .5s;
-  animation-delay: 0s;
-  animation-timing-function: ease-in;
+  @include animation-alpha;
   padding-bottom: 3rem;
 }
 ::-webkit-scrollbar {
   display : none;
 }
-.a-venir {
-  font-style: italic;
-  color:rgba($green,.6);
-  padding: .5rem .8rem;
-}
 
-// PARTIE CONTENU DES PAGES
-// TITRE H1 PAGE COTENU
-#pageContenu h1.card-title {
-  font-size   : 1.2rem;
-    line-height      : 1.33rem;
-    opacity: .4;
-    padding          : 1rem 0;
-}
-.page #sticky-wrapper {
-  margin-bottom: 1rem;
-  z-index: 6;
-  position: relative;
-}
 
-video {
-  z-index: 1;
-  position: relative;
-}
 
-//  LIEN ENTETE PAGE CONTENU AVEC TITRE
-h3 a {
-  text-decoration: none;
-  background: $green;
-  color: $black-l1;
-  transition: all .2s ease-out;
-  border-radius: 3px;
-  margin-left: .25rem;
-
-  color: $green;
-  background: $black-l1;
-  border: 1px solid rgba($green,.2);
-
-  &:hover {
-        background: $green;
-        color:$black-l1;
+// INDEX.HTML
+#home {
+  overflow: hidden;
+  padding: 0;
+  .menu {justify-content: center;}
+  .projet li {
+    @include transition-h-menu(background);
+    &:hover {
+      background-color:$green;
+      color: $black-l1;
+    }
   }
-}
 
-.projet h3 a i {
-    transform: translateY(2px);
-    padding: .1rem .2rem;
+  :last-child.special {
+    border: 1px solid rgba($green,.2);
+    padding: .8rem 0;
+    text-align: center;
+    a {
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all .4s ease-out;
+      &:hover {
+        background:$green-v3;
+        color: $black-l1;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 
@@ -91,6 +84,7 @@ h1 {
     max-width        : 560px;
     margin-top       : 0;
     padding          : 2rem 0;
+    padding-top: 0rem;
     opacity          : 1;
     background-color : $black-l1;
     text-transform   : uppercase;
@@ -101,6 +95,60 @@ h1 {
     }
   }
 }
+
+// Projet à venir sans lien actif
+.a-venir {
+  font-style: italic;
+  color:rgba($green,.6);
+  padding: .5rem .8rem;
+  &:after {
+    opacity: 0;
+    content :"\00a0 \02192 \00a0 à venir";
+    transition: opacity .2s ease-out;
+  }
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+
+// Liste des projets réalisés
+.projet {
+  margin-top : 1.8rem;
+  &:first-child {margin-top : 0;}
+  li {
+    display       : flex;
+    border-bottom : $green-light 1px solid;
+    font-family   : $font-lead;
+    &:last-child {border:0;}
+  }
+  h3 a i {
+      transform: translateY(2px);
+      padding: .1rem .2rem;
+  }
+  h2 {
+    @include       titre-liste;
+    margin-top: 0;
+    display: inline-block;
+    padding: .5rem .8rem;
+    line-height: inherit;
+    border-bottom: 1px solid rgba($green,.5);
+    background: rgba($green,.025);
+    border-bottom-width: 2px;
+    font-size: 1.5rem;
+    font-weight: 100;
+
+  }
+  h3 {
+    @include titre-liste;
+    margin-top: 0;
+  }
+  i {transform: translateY(2px);}
+}
+
+
 
 // MENU LINK -> PAGES
 .menu {
@@ -146,79 +194,59 @@ h1 {
   }
 }
 
-// Liste des projets réalisés
-.projet {
-  margin-top : 1.8rem;
-  &:first-child {margin-top : 0;}
-  li {
-    display       : flex;
-    border-bottom : $green-light 1px solid;
-    font-family   : $font-lead;
-    transition: background .5s ease-in-out;
-    &:last-child {border:0;}
-  }
-}
-
-#home {
-  .projet li:hover {
-    background: rgba(188, 238, 138, 0.04);
-  }
-}
-
-.projet li:last-child.special {
-  border: 1px solid rgba($green,.2);
-  padding: .8rem 0;
-  text-align: center;
-  a {
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all .4s ease-out;
-  }
-  a:hover {
-    background:$green-v3;
-    color: $black-l1;
-    text-decoration: none;
-  }
-}
-
-// Titre de catégorie
-.projet {
-  h2 {
-    @include       titre-liste;
-    margin-top: 0;
-    display: inline-block;
-    padding: .5rem .8rem;
-    line-height: inherit;
-    border-bottom: 1px solid rgba($green,.5);
-    background: rgba($green,.025);
-    border-bottom-width: 2px;
-    font-size: 1.5rem;
-    font-weight: 100;
-
-  }
-  h3 {
-    @include titre-liste;
-    margin-top: 0;
-  }
-  i {
-    transform: translateY(2px);
-  }
-}
-
+// HOME
 // Liens /////////////////////////////
 // Liens -- Liste
 a.bt-slim {
   @include                     titre-liste;
   padding: .5rem .8rem;
   color:$green-v3;
-  transition-property        : all;
-  transition-duration        : .3s;
-  transition-timing-function : ease-in-out;
+  @include transition-h-menu(transform);
   &:hover {
-    color : $green-v2;
+    color: $black-l1;
     transform: translateX(5px);
   }
 }
+
+
+// DESIGN DES PAGES DE CONTENU
+// PARTIE CONTENU DES PAGES
+// TITRE H1 PAGE COTENU
+#pageContenu h1.card-title {
+  font-size   : 1.2rem;
+    line-height      : 1.33rem;
+    opacity: .4;
+    padding          : 1rem 0;
+}
+.page #sticky-wrapper {
+  margin-bottom: 1rem;
+  z-index: 6;
+  position: relative;
+}
+video {
+  z-index: 1;
+  position: relative;
+}
+
+//  LIEN ENTETE PAGE CONTENU AVEC TITRE
+h3 a {
+  text-decoration: none;
+  background: $green;
+  color: $black-l1;
+  transition: all .2s ease-out;
+  border-radius: 3px;
+  margin-left: .25rem;
+
+  color: $green;
+  background: $black-l1;
+  border: 1px solid rgba($green,.2);
+
+  &:hover {
+        background: $green;
+        color:$black-l1;
+  }
+}
+
 
 // Bouton -- fermeture page encours
 .bt_close {
