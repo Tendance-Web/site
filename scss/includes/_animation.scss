@@ -36,3 +36,15 @@ opacity: 0;
 opacity: 1;
 }
 }
+
+@keyframes appear-top {
+  0% {
+    opacity: 0;
+    top:-8px;
+    position: relative;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}

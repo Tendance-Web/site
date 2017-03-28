@@ -2291,6 +2291,14 @@ code {
     opacity: 0; }
   100% {
     opacity: 1; } }
+@keyframes appear-top {
+  0% {
+    opacity: 0;
+    top: -8px;
+    position: relative; }
+  100% {
+    opacity: 1;
+    top: 0; } }
 .u-display-inherit {
   display: inherit !important; }
 
@@ -2335,10 +2343,21 @@ body {
   #home .menu {
     justify-content: center; }
   #home .projet li {
-    transition: background 0.3s cubic-bezier(0.46, 0.17, 0.52, 0.79); }
+    white-space: nowrap; }
+    #home .projet li::after {
+      border: 1px solid red;
+      width: 100%; }
     #home .projet li:hover {
-      background-color: #bcee8a;
+      -webkit-animation: decal-X 0.2s both ease-out;
+      -moz-animation: decal-X 0.2s both ease-out;
+      animation: decal-X 0.2s both ease-out;
+      background-color: #f9a03f;
       color: #1a1a1a; }
+@keyframes decal-X {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
   #home :last-child.special {
     border: 1px solid rgba(188, 238, 138, 0.2);
     padding: .8rem 0;
@@ -2351,6 +2370,20 @@ body {
         background: #bcee8a;
         color: #1a1a1a;
         text-decoration: none; }
+  #home a.bt-slim {
+    position: relative;
+    width: 100%;
+    color: #bcee8a;
+    text-decoration: none;
+    align-self: center;
+    font-size: 1rem;
+    -moz-osx-font-smoothing: grayscale;
+    padding: .5rem .8rem;
+    color: #bcee8a;
+    cursor: url(./blank.cur), auto; }
+    #home a.bt-slim:hover {
+      color: #1a1a1a;
+      cursor: url("../img/cursor/cursor-left.png") 0 0, pointer; }
 
 h1 {
   font-size: 1.7rem; }
@@ -2365,8 +2398,6 @@ h1 {
     text-transform: uppercase;
     line-height: 2rem;
     font-weight: 100; }
-    h1.card-title:before {
-      border-top: 1px solid; }
 
 .a-venir {
   font-style: italic;
@@ -2402,13 +2433,16 @@ h1 {
     -moz-osx-font-smoothing: grayscale;
     margin-top: 0;
     display: inline-block;
-    padding: .5rem .8rem;
+    padding: .6rem;
     line-height: inherit;
-    border-bottom: 1px solid rgba(188, 238, 138, 0.5);
-    background: rgba(188, 238, 138, 0.025);
+    background: #bcee8a;
+    color: black;
     border-bottom-width: 2px;
     font-size: 1.5rem;
-    font-weight: 100; }
+    font-weight: 100;
+    margin-top: .5rem;
+    margin-left: -0.2rem;
+    width: auto; }
   .projet h3 {
     position: relative;
     width: 100%;
@@ -2431,46 +2465,33 @@ h1 {
   display: flex;
   text-align: left;
   flex-direction: column; }
-  .menu__content .page ul:first-child {
-    z-index: 4;
-    top: 33px;
-    width: 100%;
-    max-width: 560px;
-    background: #1a1a1a; }
-    .menu__content .page ul:first-child li {
-      padding: 0; }
-      .menu__content .page ul:first-child li.image {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(188, 238, 138, 0.13);
-        display: inherit; }
-        .menu__content .page ul:first-child li.image .w100 {
-          width: 100%; }
-        .menu__content .page ul:first-child li.image img {
-          width: auto;
-          height: 100%;
-          margin: 0 auto;
-          display: block; }
-      .menu__content .page ul:first-child li.to-fix {
-        z-index: 12;
-        max-width: 560px;
-        background: #1a1a1a;
-        padding-top: 0.4rem; }
-
-a.bt-slim {
-  position: relative;
-  width: 100%;
-  color: #bcee8a;
-  text-decoration: none;
-  align-self: center;
-  font-size: 1rem;
-  -moz-osx-font-smoothing: grayscale;
-  padding: .5rem .8rem;
-  color: #bcee8a;
-  transition: transform 0.3s cubic-bezier(0.46, 0.17, 0.52, 0.79); }
-  a.bt-slim:hover {
-    color: #1a1a1a;
-    transform: translateX(5px); }
+  .menu__content {
+    border: 1px solid; }
+    .menu__content .page ul:first-child {
+      z-index: 4;
+      top: 33px;
+      width: 100%;
+      max-width: 560px;
+      background: #1a1a1a; }
+      .menu__content .page ul:first-child li {
+        padding: 0; }
+        .menu__content .page ul:first-child li.image {
+          margin-bottom: 2rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid rgba(188, 238, 138, 0.13);
+          display: inherit; }
+          .menu__content .page ul:first-child li.image .w100 {
+            width: 100%; }
+          .menu__content .page ul:first-child li.image img {
+            width: auto;
+            height: 100%;
+            margin: 0 auto;
+            display: block; }
+        .menu__content .page ul:first-child li.to-fix {
+          z-index: 12;
+          max-width: 560px;
+          background: #1a1a1a;
+          padding-top: 0.4rem; }
 
 #pageContenu h1.card-title {
   font-size: 1.2rem;
