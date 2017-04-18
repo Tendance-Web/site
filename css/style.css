@@ -2280,10 +2280,10 @@ code {
 @keyframes size {
   0% {
     height: 0px;
-    background-color: #3f3047; }
+    background-color: #3a2c41; }
   100% {
     height: 100%;
-    background-color: #3f3047; } }
+    background-color: #3a2c41; } }
 @keyframes alpha {
   0% {
     opacity: 0; }
@@ -2339,7 +2339,9 @@ body {
   animation-name: alpha;
   animation-duration: 0.5s;
   animation-delay: 0s;
-  animation-timing-function: ease-in-out; }
+  animation-timing-function: ease-in-out;
+  background: url("../img/texture.png") 0% 0% no-repeat #98b9ab;
+  background-attachment: fixed; }
 
 ::-webkit-scrollbar {
   display: none; }
@@ -2347,13 +2349,13 @@ body {
 #home .menu {
   justify-content: center; }
 #home .projet.ui, #home .projet.web, #home .projet.wireframe {
-  border: 2px solid; }
+  border: 2px solid #3a2c41; }
 #home .projet li {
   white-space: nowrap;
   transition: text-indent .2s ease-out;
   text-indent: 0; }
   #home .projet li:hover {
-    background-color: #3f3047;
+    background-color: #3a2c41;
     color: #98b9ab;
     text-indent: 10px; }
 #home :last-child.special {
@@ -2389,7 +2391,7 @@ footer {
   width: 100%;
   bottom: 0;
   padding: 1rem;
-  background: #3f3047; }
+  background: #3a2c41; }
   footer h1.card-title {
     z-index: 5;
     margin-top: 0;
@@ -2438,7 +2440,7 @@ footer {
     display: inline-block;
     padding: 0.6rem;
     line-height: inherit;
-    background: #fff;
+    background: #3a2c41;
     color: #98b9ab;
     border-bottom-width: 2px;
     font-size: 1.5rem;
@@ -2452,7 +2454,7 @@ footer {
       width: 10px;
       height: 10px;
       transform: rotate(45deg);
-      background: #fff;
+      background: #3a2c41;
       color: #a0d868;
       position: absolute;
       top: 89%;
@@ -2478,7 +2480,6 @@ footer {
   opacity: 1;
   margin: 0 auto;
   height: 100vh;
-  background-color: #98b9ab;
   z-index: 1;
   display: flex;
   text-align: left;

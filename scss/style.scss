@@ -55,6 +55,8 @@ body {
     font-size: 16px;
     font-weight: 100 !important;
     @include animation-alpha;
+    background:url('../img/texture.png') 0% 0% no-repeat $black-l1;
+    background-attachment: fixed;
 }
 ::-webkit-scrollbar {
     display: none;
@@ -69,8 +71,7 @@ body {
         &.ui,
         &.web,
         &.wireframe {
-            border: 2px solid;
-
+            border: 2px solid $alt-green;
         }
         li {
             white-space: nowrap;
@@ -188,7 +189,7 @@ footer {
         display: inline-block;
         padding: 0.6rem;
         line-height: inherit;
-        background: $green;
+        background: $alt-green;
         color: $black-l1;
         border-bottom-width: 2px;
         font-size: 1.5rem;
@@ -202,7 +203,7 @@ footer {
           width: 10px;
           height: 10px;
           transform: rotate(45deg);
-          background: $green;
+          background: $alt-green;
           color: #a0d868;
           position: absolute;
           top: 89%;
