@@ -50,12 +50,12 @@ html {
 }
 body {
     color: $green;
-    background: $black-l1;
+    background: $back-page;
     font-family: $font-lead;
     font-size: 16px;
     font-weight: 100 !important;
     @include animation-alpha;
-    background:url('../img/texture.png') 0% 0% no-repeat $black-l1;
+    background:url('../img/texture.png') 0% 0% no-repeat $back-page;
     background-attachment: fixed;
 }
 ::-webkit-scrollbar {
@@ -71,15 +71,15 @@ body {
         &.ui,
         &.web,
         &.wireframe {
-            border: 2px solid $alt-green;
+            border: 2px solid $alt-color;
         }
         li {
             white-space: nowrap;
             transition: text-indent .2s ease-out;
             text-indent: 0;
             &:hover {
-              background-color: $alt-green;
-              color: $black-l1;
+              background-color: $alt-color;
+              color: $back-page;
               text-indent: 10px;
             }
         }
@@ -96,7 +96,7 @@ body {
             transition: all 0.4s ease-out;
             &:hover {
                 background: $green-v3;
-                color: $black-l1;
+                color: $back-page;
                 text-decoration: none;
             }
         }
@@ -107,11 +107,10 @@ body {
     a.bt-slim {
         @include titre-liste;
         padding: 0.5rem 0.8rem;
-        color: $green-v3;
-        font-weight: bold;
+        color: $alt-color;
         cursor: url(./blank.cur), auto;
         &:hover {
-            color: $black-l1;
+            color: $back-page;
             cursor: url('../img/cursor/cursor-left.png') 0 0, pointer;
         }
     }
@@ -119,11 +118,11 @@ body {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   padding: 1rem;
-  background: $alt-green;
+  background: $alt-color;
 
   h1.card-title {
     z-index: 5;
@@ -136,6 +135,7 @@ footer {
     text-align: center;
     -moz-osx-font-smoothing: grayscale;
     font-size: 1rem;
+    color: $back-page;
   }
 }
 
@@ -161,7 +161,7 @@ footer {
 // ***************************************************************
 .projet {
     margin-top: 4rem;
-    background: lighten($black-l1,10%);
+    background: $back-page-alpha;
 
     &:first-child {
         margin-top: 0;
@@ -189,21 +189,21 @@ footer {
         display: inline-block;
         padding: 0.6rem;
         line-height: inherit;
-        background: $alt-green;
-        color: $black-l1;
+        background: $alt-color;
+        color: $back-page;
         border-bottom-width: 2px;
         font-size: 1.5rem;
         font-weight: 500;
-        margin: -13px -0.1rem -0.9rem;
-        top:-2rem;
+        margin: 0px 0 0 -2px;
+        top: -0.5rem;
         z-index: 9999;
-        width: auto;
+        width: calc( 100% + 4px);
         &::after {
           display: block;
           width: 10px;
           height: 10px;
           transform: rotate(45deg);
-          background: $alt-green;
+          background: $alt-color;
           color: #a0d868;
           position: absolute;
           top: 89%;
@@ -216,11 +216,19 @@ footer {
     h3 {
         @include titre-liste;
         margin-top: 0;
-        color: inherit;
+        color:$alt-color;
+        width: auto;
+        background: $back-page;
+        padding: .5rem;
+        font-weight: lighter;
     }
     i {
         transform: translateY(2px);
     }
+}
+
+.page {
+  padding: 0rem 2rem;
 }
 
 // -- MENU LINK -> PAGES
@@ -238,20 +246,16 @@ footer {
             top: $top-menu-page;
             width: 100%;
             max-width: 560px;
-            background: $black-l1;
             li {
                 padding: 0;
-
                 &.image {
                     margin-bottom: 2rem;
                     padding-bottom: 2rem;
                     border-bottom: 1px solid $green-light;
                     display: inherit;
-
                     .w100 {
                         width: 100%;
                     }
-
                     img {
                         width: auto;
                         height: 100%;
@@ -265,8 +269,6 @@ footer {
                 &.to-fix {
                     z-index: 12;
                     max-width: 560px;
-                    background: $black-l1;
-                    padding-top: 0.4rem;
                 }
             }
         }
@@ -276,19 +278,21 @@ footer {
 // -- DESIGN DES PAGES DE CONTENU
 // PARTIE CONTENU DES PAGES
 // TITRE PAGE CONTENU //
-
 #pageContenu h1.card-title {
-  z-index: 5;
-  max-width: 560px;
+  z-index: 9999;
   margin-top: 0;
   text-transform: uppercase;
   line-height: 2rem;
   font-weight: 100;
-
-    font-size: 1.2rem;
-    line-height: 1.33rem;
-    opacity: 0.4;
-    padding: 1rem 0;
+  font-size: 0.8rem;
+  line-height: 1.33rem;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background:$back-page;
+  left: 0;
+  text-align: center;
 }
 .page #sticky-wrapper {
     margin-bottom: 1rem;
@@ -301,22 +305,6 @@ video {
 }
 
 //  -- LIEN ENTETE PAGE CONTENU AVEC TITRE //
-h3 a {
-    text-decoration: none;
-    background: $green;
-    color: $black-l1;
-    transition: all 0.2s ease-out;
-    border-radius: 3px;
-    margin-left: 0.25rem;
-    color: $green;
-    background: $black-l1;
-    border: 1px solid rgba($green,.2);
-
-    &:hover {
-        background: $green;
-        color: $black-l1;
-    }
-}
 
 // Bouton -- fermeture page encours //
 .bt_close {
@@ -330,16 +318,17 @@ h3 a {
         position: relative;
         opacity: 1;
         line-height: 2.5rem;
-
+        right:0;
+        top:-.5rem;
+        position: absolute;
         i {
-            border-radius: 50%;
-            border: 1px solid $green;
-            color: $green;
+            border-radius: 0%;
+            border: 1px solid $alt-color;
+            color: $alt-color;
             transition: all 0.2s ease-in-out;
-
             &:hover {
                 background: $green;
-                color: $black-l1;
+                color: $back-page;
             }
         }
 

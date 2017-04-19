@@ -17,11 +17,11 @@ $pulse_scaling : .5;
 @keyframes size {
     0% {
         height: 0px;
-        background-color: $alt-green;
+        background-color: $alt-color;
     }
     100% {
         height: 100%;
-        background-color: $alt-green;
+        background-color: $alt-color;
     }
 }
 @keyframes alpha {

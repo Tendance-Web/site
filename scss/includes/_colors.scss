@@ -1,6 +1,7 @@
 $white:#ffffff;
 $black:#000000;
-$black-l1:#98b9ab;
+$back-page:#98b9ab;
+$back-page-alpha:rgba($back-page,0.4);
 $black-typo:rgba($black,.2);
 
 
@@ -8,7 +9,7 @@ $green:#fff;
 $green-v2:#637074;
 $green-v3:#637074;
 
-$green-spot:rgb(3,226,100);
+//$green-spot:rgb(3,226,100);
 $green-light:rgba($green, 0.13);
 
 $green-dark:#a53f2b;
@@ -18,5 +19,5 @@ $orange-v2:rgb(255,92,44);
 
 
 // Couleurs contrastes
-$--alt-green:#3f3047;
-$alt-green:#3a2c41;
+$--alt-color:#3f3047;
+$alt-color:#000;

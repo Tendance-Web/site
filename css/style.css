@@ -2280,10 +2280,10 @@ code {
 @keyframes size {
   0% {
     height: 0px;
-    background-color: #3a2c41; }
+    background-color: #000; }
   100% {
     height: 100%;
-    background-color: #3a2c41; } }
+    background-color: #000; } }
 @keyframes alpha {
   0% {
     opacity: 0; }
@@ -2349,13 +2349,13 @@ body {
 #home .menu {
   justify-content: center; }
 #home .projet.ui, #home .projet.web, #home .projet.wireframe {
-  border: 2px solid #3a2c41; }
+  border: 2px solid #000; }
 #home .projet li {
   white-space: nowrap;
   transition: text-indent .2s ease-out;
   text-indent: 0; }
   #home .projet li:hover {
-    background-color: #3a2c41;
+    background-color: #000;
     color: #98b9ab;
     text-indent: 10px; }
 #home :last-child.special {
@@ -2379,19 +2379,18 @@ body {
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
   padding: 0.5rem 0.8rem;
-  color: #637074;
-  font-weight: bold;
+  color: #000;
   cursor: url(./blank.cur), auto; }
   #home a.bt-slim:hover {
     color: #98b9ab;
     cursor: url("../img/cursor/cursor-left.png") 0 0, pointer; }
 
 footer {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   padding: 1rem;
-  background: #3a2c41; }
+  background: #000; }
   footer h1.card-title {
     z-index: 5;
     margin-top: 0;
@@ -2402,7 +2401,8 @@ footer {
     font-weight: 100;
     text-align: center;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1rem; }
+    font-size: 1rem;
+    color: #98b9ab; }
 
 .a-venir {
   font-style: italic;
@@ -2417,7 +2417,7 @@ footer {
 
 .projet {
   margin-top: 4rem;
-  background: #b6cec4; }
+  background: rgba(152, 185, 171, 0.4); }
   .projet:first-child {
     margin-top: 0; }
   .projet li {
@@ -2440,21 +2440,21 @@ footer {
     display: inline-block;
     padding: 0.6rem;
     line-height: inherit;
-    background: #3a2c41;
+    background: #000;
     color: #98b9ab;
     border-bottom-width: 2px;
     font-size: 1.5rem;
     font-weight: 500;
-    margin: -13px -0.1rem -0.9rem;
-    top: -2rem;
+    margin: 0px 0 0 -2px;
+    top: -0.5rem;
     z-index: 9999;
-    width: auto; }
+    width: calc( 100% + 4px); }
     .projet h2::after {
       display: block;
       width: 10px;
       height: 10px;
       transform: rotate(45deg);
-      background: #3a2c41;
+      background: #000;
       color: #a0d868;
       position: absolute;
       top: 89%;
@@ -2471,9 +2471,16 @@ footer {
     font-size: 1rem;
     -moz-osx-font-smoothing: grayscale;
     margin-top: 0;
-    color: inherit; }
+    color: #000;
+    width: auto;
+    background: #98b9ab;
+    padding: .5rem;
+    font-weight: lighter; }
   .projet i {
     transform: translateY(2px); }
+
+.page {
+  padding: 0rem 2rem; }
 
 .menu {
   max-width: 560px;
@@ -2489,8 +2496,7 @@ footer {
     z-index: 4;
     top: 33px;
     width: 100%;
-    max-width: 560px;
-    background: #98b9ab; }
+    max-width: 560px; }
     .menu__content .page ul:first-child li {
       padding: 0; }
       .menu__content .page ul:first-child li.image {
@@ -2509,21 +2515,23 @@ footer {
           border-bottom-width: 6px; }
       .menu__content .page ul:first-child li.to-fix {
         z-index: 12;
-        max-width: 560px;
-        background: #98b9ab;
-        padding-top: 0.4rem; }
+        max-width: 560px; }
 
 #pageContenu h1.card-title {
-  z-index: 5;
-  max-width: 560px;
+  z-index: 9999;
   margin-top: 0;
   text-transform: uppercase;
   line-height: 2rem;
   font-weight: 100;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   line-height: 1.33rem;
-  opacity: 0.4;
-  padding: 1rem 0; }
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #98b9ab;
+  left: 0;
+  text-align: center; }
 
 .page #sticky-wrapper {
   margin-bottom: 1rem;
@@ -2534,20 +2542,6 @@ video {
   z-index: 1;
   position: relative; }
 
-h3 a {
-  text-decoration: none;
-  background: #fff;
-  color: #98b9ab;
-  transition: all 0.2s ease-out;
-  border-radius: 3px;
-  margin-left: 0.25rem;
-  color: #fff;
-  background: #98b9ab;
-  border: 1px solid rgba(255, 255, 255, 0.2); }
-  h3 a:hover {
-    background: #fff;
-    color: #98b9ab; }
-
 .bt_close {
   position: fixed;
   opacity: 0;
@@ -2557,11 +2551,14 @@ h3 a {
     z-index: 3;
     position: relative;
     opacity: 1;
-    line-height: 2.5rem; }
+    line-height: 2.5rem;
+    right: 0;
+    top: -.5rem;
+    position: absolute; }
     .bt_close.bt_close--show i {
-      border-radius: 50%;
-      border: 1px solid #fff;
-      color: #fff;
+      border-radius: 0%;
+      border: 1px solid #000;
+      color: #000;
       transition: all 0.2s ease-in-out; }
       .bt_close.bt_close--show i:hover {
         background: #fff;
