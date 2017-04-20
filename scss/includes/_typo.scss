@@ -4,7 +4,7 @@ $font-corps : 'Oswald', 'Roboto', sans-serif;
 @mixin titre-liste {
   position                : relative;
   width                   : 100%;
-  color                   : $green-v2;
+  color                   : $alt-color;
   text-decoration         : none;
   align-self              : center;
   font-size               : 1rem;

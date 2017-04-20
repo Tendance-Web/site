@@ -2332,7 +2332,7 @@ html {
 
 body {
   color: #fff;
-  background: #98b9ab;
+  background: #F9E00E;
   font-family: "Roboto", "Oswald", sans-serif;
   font-size: 16px;
   font-weight: 100 !important;
@@ -2340,24 +2340,23 @@ body {
   animation-duration: 0.5s;
   animation-delay: 0s;
   animation-timing-function: ease-in-out;
-  background: url("../img/texture.png") 0% 0% no-repeat #98b9ab;
+  background: url("../img/texture.png") 0% 0% no-repeat #F9E00E;
   background-attachment: fixed; }
-
-::-webkit-scrollbar {
-  display: none; }
 
 #home .menu {
   justify-content: center; }
-#home .projet.ui, #home .projet.web, #home .projet.wireframe {
-  border: 2px solid #000; }
-#home .projet li {
-  white-space: nowrap;
-  transition: text-indent .2s ease-out;
-  text-indent: 0; }
-  #home .projet li:hover {
-    background-color: #000;
-    color: #98b9ab;
-    text-indent: 10px; }
+#home .projet {
+  background: rgba(249, 224, 14, 0.4); }
+  #home .projet.ui, #home .projet.web, #home .projet.wireframe {
+    border: 2px solid #000; }
+  #home .projet li {
+    white-space: nowrap;
+    transition: text-indent .2s ease-out;
+    text-indent: 0; }
+    #home .projet li:hover {
+      background-color: #000;
+      color: #F9E00E;
+      text-indent: 10px; }
 #home :last-child.special {
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.8rem 0;
@@ -2368,12 +2367,12 @@ body {
     transition: all 0.4s ease-out; }
     #home :last-child.special a:hover {
       background: #637074;
-      color: #98b9ab;
+      color: #F9E00E;
       text-decoration: none; }
 #home a.bt-slim {
   position: relative;
   width: 100%;
-  color: #637074;
+  color: #000;
   text-decoration: none;
   align-self: center;
   font-size: 1rem;
@@ -2382,7 +2381,7 @@ body {
   color: #000;
   cursor: url(./blank.cur), auto; }
   #home a.bt-slim:hover {
-    color: #98b9ab;
+    color: #F9E00E;
     cursor: url("../img/cursor/cursor-left.png") 0 0, pointer; }
 
 footer {
@@ -2402,7 +2401,7 @@ footer {
     text-align: center;
     -moz-osx-font-smoothing: grayscale;
     font-size: 1rem;
-    color: #98b9ab; }
+    color: #F9E00E; }
 
 .a-venir {
   font-style: italic;
@@ -2416,13 +2415,12 @@ footer {
     opacity: 1; }
 
 .projet {
-  margin-top: 4rem;
-  background: rgba(152, 185, 171, 0.4); }
+  margin-top: 2rem; }
   .projet:first-child {
     margin-top: 0; }
   .projet li {
     display: flex;
-    border-bottom: rgba(255, 255, 255, 0.13) 1px solid;
+    border-bottom: rgba(0, 0, 0, 0.2) 1px solid;
     font-family: "Roboto", "Oswald", sans-serif; }
     .projet li:last-child {
       border: 0; }
@@ -2441,7 +2439,7 @@ footer {
     padding: 0.6rem;
     line-height: inherit;
     background: #000;
-    color: #98b9ab;
+    color: #F9E00E;
     border-bottom-width: 2px;
     font-size: 1.5rem;
     font-weight: 500;
@@ -2463,24 +2461,25 @@ footer {
       z-index: -999;
       font-size: 2px; }
   .projet h3 {
-    position: relative;
-    width: 100%;
-    color: #637074;
+    color: #000;
+    width: auto;
+    background: #F9E00E;
+    padding: .5rem;
+    font-weight: lighter;
+    position: absolute;
+    color: #000;
     text-decoration: none;
     align-self: center;
     font-size: 1rem;
     -moz-osx-font-smoothing: grayscale;
-    margin-top: 0;
-    color: #000;
-    width: auto;
-    background: #98b9ab;
-    padding: .5rem;
-    font-weight: lighter; }
+    left: 0;
+    position: fixed; }
   .projet i {
     transform: translateY(2px); }
 
 .page {
-  padding: 0rem 2rem; }
+  padding: 0rem 2rem;
+  background: #000000; }
 
 .menu {
   max-width: 560px;
@@ -2529,7 +2528,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #98b9ab;
+  background: #F9E00E;
   left: 0;
   text-align: center; }
 
@@ -2550,19 +2549,16 @@ video {
   .bt_close.bt_close--show {
     z-index: 3;
     position: relative;
-    opacity: 1;
-    line-height: 2.5rem;
-    right: 0;
-    top: -.5rem;
-    position: absolute; }
+    opacity: 1; }
     .bt_close.bt_close--show i {
       border-radius: 0%;
       border: 1px solid #000;
       color: #000;
-      transition: all 0.2s ease-in-out; }
+      transition: all 0.2s ease-in-out;
+      padding: .5rem; }
       .bt_close.bt_close--show i:hover {
-        background: #fff;
-        color: #98b9ab; }
+        background: #000;
+        color: #F9E00E; }
     .bt_close.bt_close--show:hover {
       cursor: pointer; }
 

@@ -1,7 +1,11 @@
 @charset "UTF-8";
 
 @import "includes/reset", "includes/animate", "includes/colors", "includes/base", "includes/animation", "includes/_typo.scss", "includes/_layers.scss", "includes/_util.scss", "../node_modules/fontawesome-scss/fontAwesome";
-// Animation en include donc en mixin
+
+// ***************************************************************
+// ANIMATION EN INCLUDE DONC EN MIXIN
+// ***************************************************************
+
 @mixin animation-alpha ($duration:0.5s){
     animation-name: alpha;
     animation-duration: $duration;
@@ -42,7 +46,8 @@
 
 // ***************************************************************
 // GENERAL
-// ***************************************************************
+//
+
 html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased !important;
@@ -58,16 +63,15 @@ body {
     background:url('../img/texture.png') 0% 0% no-repeat $back-page;
     background-attachment: fixed;
 }
-::-webkit-scrollbar {
-    display: none;
-}
 
 // ***************************************************************
 // ACCUEIL
 // ***************************************************************
+
 #home {
     .menu {justify-content: center;}
     .projet {
+      background: $back-page-alpha;
         &.ui,
         &.web,
         &.wireframe {
@@ -116,7 +120,6 @@ body {
     }
 
 }
-
 footer {
   position: fixed;
   width: 100%;
@@ -156,19 +159,20 @@ footer {
     }
 }
 
+
 // ***************************************************************
-// CONTENU
+// CONTENU DU PORTFOLIO
 // ***************************************************************
+
 .projet {
-    margin-top: 4rem;
-    background: $back-page-alpha;
+    margin-top: 2rem;
 
     &:first-child {
         margin-top: 0;
     }
     li {
         display: flex;
-        border-bottom: $green-light 1px solid;
+        border-bottom: $black-light 1px solid;
         font-family: $font-lead;
         &:last-child {
             border: 0;
@@ -214,21 +218,27 @@ footer {
         }
     }
     h3 {
-        @include titre-liste;
-        margin-top: 0;
         color:$alt-color;
         width: auto;
         background: $back-page;
         padding: .5rem;
         font-weight: lighter;
+        position                : absolute;
+        color                   : $alt-color;
+        text-decoration         : none;
+        align-self              : center;
+        font-size               : 1rem;
+        -moz-osx-font-smoothing : grayscale;
+        left: 0;
+        position: fixed;
     }
     i {
         transform: translateY(2px);
     }
 }
-
 .page {
   padding: 0rem 2rem;
+  background: $black;
 }
 
 // -- MENU LINK -> PAGES
@@ -278,6 +288,7 @@ footer {
 // -- DESIGN DES PAGES DE CONTENU
 // PARTIE CONTENU DES PAGES
 // TITRE PAGE CONTENU //
+
 #pageContenu h1.card-title {
   z-index: 9999;
   margin-top: 0;
@@ -317,17 +328,16 @@ video {
         z-index: 3;
         position: relative;
         opacity: 1;
-        line-height: 2.5rem;
-        right:0;
-        top:-.5rem;
-        position: absolute;
+        //line-height: 2.5rem;
+
         i {
             border-radius: 0%;
             border: 1px solid $alt-color;
             color: $alt-color;
             transition: all 0.2s ease-in-out;
+            padding: .5rem;
             &:hover {
-                background: $green;
+                background:$alt-color;
                 color: $back-page;
             }
         }
@@ -344,9 +354,7 @@ video {
 @media only screen and (max-width : 620px) {
 
 // GLOBAL
-body {
-  padding-top: 1rem;
-}
+body {padding-top: 1rem;}
 
 // ACCUEIL
 // -- menu__content
