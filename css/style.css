@@ -2349,7 +2349,7 @@ body {
 #home .projet {
   background: rgba(249, 224, 14, 0.8); }
   #home .projet.ui, #home .projet.web, #home .projet.wireframe {
-    border: 8px solid #049C39; }
+    border: 2px solid #049C39; }
   #home .projet li {
     white-space: nowrap;
     transition: text-indent .1s ease-out;
@@ -2394,7 +2394,7 @@ footer {
 
 .a-venir {
   font-style: italic;
-  color: rgba(255, 255, 255, 0.6);
+  color: #049C39;
   padding: 0.5rem 0.8rem; }
   .a-venir:after {
     opacity: 0;
@@ -2404,12 +2404,12 @@ footer {
     opacity: 1; }
 
 .projet {
-  margin-top: 1px; }
+  margin-top: 10px; }
   .projet:first-child {
     margin-top: 0; }
   .projet li {
     display: flex;
-    border-bottom: rgba(0, 0, 0, 0.2) 1px solid;
+    border-bottom: rgba(4, 156, 57, 0.5) 3px solid;
     font-family: "Roboto", "Oswald", sans-serif; }
     .projet li:last-child {
       border: 0; }
@@ -2423,7 +2423,6 @@ footer {
     align-self: center;
     font-size: 1rem;
     -moz-osx-font-smoothing: grayscale;
-    margin-top: 0;
     display: inline-block;
     padding: 0.6rem;
     line-height: inherit;
@@ -2431,9 +2430,8 @@ footer {
     color: #F9E00E;
     border-bottom-width: 2px;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 900;
     margin: 0px 0 0 -2px;
-    top: -0.5rem;
     z-index: 9999;
     width: calc( 100% + 4px); }
   .projet h3 {
@@ -2454,11 +2452,10 @@ footer {
     transform: translateY(2px); }
 
 .page {
-  padding: 0rem 2rem;
-  background: #000000; }
+  padding: 0rem 2rem; }
 
 .menu {
-  max-width: 560px;
+  max-width: 770px;
   opacity: 1;
   margin: 0 auto;
   height: 100vh;
@@ -2470,8 +2467,7 @@ footer {
   .menu__content .page ul:first-child {
     z-index: 4;
     top: 33px;
-    width: 100%;
-    max-width: 660px; }
+    width: 100%; }
     .menu__content .page ul:first-child li {
       padding: 0; }
       .menu__content .page ul:first-child li.image {

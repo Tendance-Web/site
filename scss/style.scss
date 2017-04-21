@@ -78,7 +78,7 @@ body {
         &.ui,
         &.web,
         &.wireframe {
-            border: 8px solid $alt-color;
+            border:2px solid $alt-color;
         }
         li {
             white-space: nowrap;
@@ -133,7 +133,7 @@ footer {
 // -- Projet a venir sans lien actif //
 .a-venir {
     font-style: italic;
-    color: rgba($green,.6);
+    color: $alt-color;
     padding: 0.5rem 0.8rem;
     &:after {
         opacity: 0;
@@ -153,14 +153,14 @@ footer {
 // ***************************************************************
 
 .projet {
-    margin-top: 1px;
+    margin-top: 10px;
 
     &:first-child {
         margin-top: 0;
     }
     li {
         display: flex;
-        border-bottom: $black-light 1px solid;
+        border-bottom: rgba($alt-color,.5) 3px solid;
         font-family: $font-lead;
         &:last-child {
             border: 0;
@@ -177,7 +177,7 @@ footer {
         align-self: center;
         font-size: 1rem;
         -moz-osx-font-smoothing: grayscale;
-        margin-top: 0;
+
         display: inline-block;
         padding: 0.6rem;
         line-height: inherit;
@@ -185,9 +185,9 @@ footer {
         color: $back-page;
         border-bottom-width: 2px;
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: 900;
         margin: 0px 0 0 -2px;
-        top: -0.5rem;
+
         z-index: 9999;
         width: calc( 100% + 4px);
     }
@@ -212,7 +212,7 @@ footer {
 }
 .page {
   padding: 0rem 2rem;
-  background: $black;
+  //background: $black;
 }
 
 // -- MENU LINK -> PAGES
@@ -229,7 +229,7 @@ footer {
             z-index: 4;
             top: $top-menu-page;
             width: 100%;
-            max-width: 660px;
+
             li {
                 padding: 0;
                 &.image {
