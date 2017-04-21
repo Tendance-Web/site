@@ -1,9 +1,15 @@
+//***************************************************
+// Couleurs globale
+//***************************************************
+
+
 $white:#ffffff;
 $black:#000000;
 $black-light:rgba($black,.2);
+//$back-page:#049C39;
 $back-page:#F9E00E;
-$back-page--:#98b9ab;
-$back-page-alpha:rgba($back-page,0.4);
+//$back-page:#98b9ab;
+$back-page-alpha:rgba($back-page,0.8);
 $black-typo:rgba($black,.2);
 
 
@@ -19,7 +25,10 @@ $orange:#E9573C;
 $orange-v2:rgb(255,92,44);
 
 
-
+//***************************************************
 // Couleurs contrastes
-$--alt-color:#3f3047;
-$alt-color:#000;
+//***************************************************
+
+//$--alt-color:#3f3047;
+//$alt-color:#000;
+$alt-color:#049C39;

@@ -60,7 +60,7 @@ body {
     font-size: 16px;
     font-weight: 100 !important;
     @include animation-alpha;
-    background:url('../img/texture.png') 0% 0% no-repeat $back-page;
+    background:url('../img/texture-2.png') center center no-repeat $back-page;
     background-attachment: fixed;
 }
 
@@ -69,17 +69,20 @@ body {
 // ***************************************************************
 
 #home {
-    .menu {justify-content: center;}
+    .menu {
+      justify-content: center;
+      max-width: 350px;
+    }
     .projet {
       background: $back-page-alpha;
         &.ui,
         &.web,
         &.wireframe {
-            border: 2px solid $alt-color;
+            border: 8px solid $alt-color;
         }
         li {
             white-space: nowrap;
-            transition: text-indent .2s ease-out;
+            transition: text-indent .1s ease-out;
             text-indent: 0;
             &:hover {
               background-color: $alt-color;
@@ -89,22 +92,7 @@ body {
         }
     }
 
-    :last-child.special {
-        border: 1px solid rgba($green,.2);
-        padding: 0.8rem 0;
-        text-align: center;
 
-        a {
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: all 0.4s ease-out;
-            &:hover {
-                background: $green-v3;
-                color: $back-page;
-                text-decoration: none;
-            }
-        }
-    }
 
     // Liens /////////////////////////////
     // Liens -- Liste
@@ -120,13 +108,13 @@ body {
     }
 
 }
+
 footer {
   position: fixed;
   width: 100%;
   bottom: 0;
   padding: 1rem;
   background: $alt-color;
-
   h1.card-title {
     z-index: 5;
     margin-top: 0;
@@ -165,7 +153,7 @@ footer {
 // ***************************************************************
 
 .projet {
-    margin-top: 2rem;
+    margin-top: 1px;
 
     &:first-child {
         margin-top: 0;
@@ -202,20 +190,6 @@ footer {
         top: -0.5rem;
         z-index: 9999;
         width: calc( 100% + 4px);
-        &::after {
-          display: block;
-          width: 10px;
-          height: 10px;
-          transform: rotate(45deg);
-          background: $alt-color;
-          color: #a0d868;
-          position: absolute;
-          top: 89%;
-          content: '*';
-          left: 13px;
-          z-index: -999;
-          font-size: 2px;
-        }
     }
     h3 {
         color:$alt-color;
@@ -248,14 +222,14 @@ footer {
     display: flex;
     text-align: left;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     &__content {
         // Page appelé
         .page ul:first-child {
             z-index: 4;
             top: $top-menu-page;
             width: 100%;
-            max-width: 560px;
+            max-width: 660px;
             li {
                 padding: 0;
                 &.image {
