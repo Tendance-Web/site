@@ -1,0 +1,243 @@
+@import "includes/reset",
+        "includes/animate",
+        "includes/colors",
+        "includes/base",
+        "includes/animation",
+        "includes/_typo.scss",
+        "includes/_layers.scss",
+        "includes/_util.scss",
+        "../node_modules/fontawesome-scss/fontAwesome";
+
+// General
+html {
+  overflow-x             : hidden;
+  font-size              : 16px;
+
+  a {
+    -webkit-font-smoothing : antialiased !important;
+  }
+}
+body {
+  padding     : 0 2rem;
+  color       : $green;
+  background  : $couleur-fond--page;
+  font-family : $font-lead;
+  font-size   : 16px;
+  font-weight : 500;
+  animation-name: alpha;
+  animation-duration: .5s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  background-image: url('../img/back-svg.svg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+::-webkit-scrollbar {
+  display : none;
+}
+
+// MENU LINK -> PAGES
+.menu {
+  @include Menu-largeur;
+  opacity     : 1;
+  position: relative;
+  top:12vh;
+  height      : 75vh;
+  background-color:$couleur-fond--menu;
+
+  z-index        : 1;
+  display        : flex;
+  text-align     : left;
+  flex-direction : column;
+  &__content {
+    background-color: $couleur-fond--sousmenu;
+    padding: 35px;
+    height: 100%;
+    // Page appelé
+    .page ul:first-child {
+      z-index    : 4;
+      top        : $top-menu-page;
+      width      : 100%;
+      li {
+        padding : 0;
+        &.image {
+          margin-bottom  : 2rem;
+          padding-bottom : 2rem;
+          display: inherit;
+          .w100 {width: 100%}
+          img {
+            width  : auto;
+            height : 100%;
+            margin: 0 auto;
+            display: block;
+          }
+        }
+        // Titre d'une page de contenu
+        &.to-fix {
+          z-index    : 12;
+          max-width  : 560px;
+          background : $black-l1;
+
+          padding-top: 0.4rem;
+        }
+      }
+    }
+  }
+}
+// Liens /////////////////////////////
+// Liens -- Liste
+a.bt-slim {
+  @include                     titre-liste;
+  padding:.5625rem 0;
+  color:$couleur-typo--menu;
+  transition-property        : all;
+  transition-duration        : .2s;
+  transition-timing-function : ease-in-out;
+  font-family:$font-lead;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+
+// Liste des projets réalisés
+.projet {
+  margin-top :3.96rem;
+  &:first-child {margin-top: 0;}
+  li {
+    display       : flex;
+    border-bottom : $couleur-bordure--sousmenu 1px solid;
+    font-family   : $font-lead;
+    transition: background .5s ease-in-out;
+  }
+}
+
+
+// Titre de catégorie
+.projet {
+  h2 {
+    @include       titre-liste;
+    display: inline-block;
+    padding:.875rem 0;
+    line-height: inherit;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h3 {
+    @include titre-liste;
+    margin-top: 0;
+  }
+  i {
+    transform: translateY(2px);
+  }
+}
+
+
+// PARTIE CONTENU DES PAGES
+// TITRE H1 PAGE CONTENU
+#pageContenu h1.card-title {
+  font-size   : 1.2rem;
+    line-height      : 1.33rem;
+    opacity: .4;
+    padding          : 1rem 0;
+}
+.page #sticky-wrapper {
+  margin-bottom: 1rem;
+  z-index: 6;
+  position: relative;
+}
+video {
+  z-index: 1;
+  position: relative;
+}
+//  LIEN ENTETE PAGE DE CONTENU AVEC TITRE
+h3 a {
+  text-decoration: none;
+  background: $green;
+  color: $black-l1;
+  transition: all .2s ease-out;
+  border-radius: 3px;
+  margin-left: .25rem;
+
+  color: $green;
+  background: $black-l1;
+  border: 1px solid rgba($green,.2);
+
+  &:hover {
+        background: $green;
+        color:$black-l1;
+  }
+}
+.projet h3 a i {
+    transform: translateY(2px);
+    padding: .1rem .2rem;
+}
+// Bouton -- fermeture page encours
+.bt_close {
+  position   : fixed;
+  opacity    : 0;
+  font-size  : 1.5rem;
+  transition : all .1s ease-in-out;
+  &.bt_close--show {
+    z-index  : 3;
+    position : relative;
+    opacity  : 1;
+    line-height: 2.5rem;
+    i {
+        border-radius: 50%;
+        border: 1px solid $green;
+        color: $green;
+        transition:all .2s ease-in-out;
+        &:hover {
+          background: $green;
+          color:$black-l1;
+        }
+    }
+    &:hover {cursor : pointer;}
+  }
+}
+
+// Pied de page
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  background-color: $couleur-fond--menu;
+  color: $couleur-typo--menu;
+  font-weight:300;
+
+}
+
+
+// Mediaqueries
+@media only screen and (max-width : 620px) {
+        h1.card-title {
+          margin-bottom: 0rem;
+        }
+
+
+        // TITRE H1 PAGE COTENU
+        #pageContenu h1.card-title {
+          font-size   : 1.2rem;
+            line-height      : 1.33rem;
+            opacity: .4;
+            padding          : 1rem 0;
+
+        }
+
+        .menu__content .page ul:first-child li.image {
+          img {
+            width: 50%;
+          }
+          &.top {
+            transform: translateY(-280px);
+          }
+        }
+}

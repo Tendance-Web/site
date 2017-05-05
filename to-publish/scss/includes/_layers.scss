@@ -1,0 +1,15 @@
+// Var
+$top-menu:176px;
+$top-item-page:$top-menu;
+$top-menu-page:33px;
+
+
+@mixin Visu-encours {
+  position:relative;
+}
+
+@mixin Menu-largeur {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 95%;
+}
