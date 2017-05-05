@@ -2313,7 +2313,6 @@ html {
 
 body {
   padding: 0 2rem;
-  color: #bcee8a;
   background: #FFEB3B;
   font-family: "Roboto", "Oswald", sans-serif;
   font-size: 16px;
@@ -2324,7 +2323,8 @@ body {
   animation-timing-function: ease-in;
   background-image: url("../img/back-svg.svg");
   background-repeat: no-repeat;
-  background-position: 0 0; }
+  background-position: 0 0;
+  background-attachment: fixed; }
 
 ::-webkit-scrollbar {
   display: none; }
@@ -2347,14 +2347,15 @@ body {
     padding: 35px;
     height: 100%; }
     .menu__content .page ul:first-child {
+      margin-top: 0 !important; }
+    .menu__content .page ul:first-child {
       z-index: 4;
       top: 33px;
       width: 100%; }
       .menu__content .page ul:first-child li {
         padding: 0; }
         .menu__content .page ul:first-child li.image {
-          margin-bottom: 2rem;
-          padding-bottom: 2rem;
+          margin: 15rem 0;
           display: inherit; }
           .menu__content .page ul:first-child li.image .w100 {
             width: 100%; }
@@ -2365,13 +2366,10 @@ body {
             display: block; }
         .menu__content .page ul:first-child li.to-fix {
           z-index: 12;
-          max-width: 560px;
-          background: #1a1a1a;
-          padding-top: 0.4rem; }
+          background: #0C0C08; }
 
 a.bt-slim {
   position: relative;
-  width: 100%;
   color: #F6E6A5;
   text-decoration: none;
   align-self: center;
@@ -2379,12 +2377,12 @@ a.bt-slim {
   -moz-osx-font-smoothing: grayscale;
   padding: .5625rem 0;
   color: #F6E6A5;
-  transition-property: all;
+  transition-property: text-indent;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
   font-family: "Roboto", "Oswald", sans-serif; }
   a.bt-slim:hover {
-    transform: translateX(5px); }
+    text-indent: 15px; }
 
 .projet {
   margin-top: 3.96rem; }
@@ -2398,7 +2396,6 @@ a.bt-slim {
 
 .projet h2 {
   position: relative;
-  width: 100%;
   color: #F6E6A5;
   text-decoration: none;
   align-self: center;
@@ -2410,30 +2407,46 @@ a.bt-slim {
   font-size: 3rem;
   font-weight: 300;
   margin-bottom: 1rem; }
+  .projet h2:after {
+    display: block;
+    content: ' ';
+    height: 2px;
+    background: #F6E6A5;
+    top: 40px;
+    position: absolute;
+    width: 20px;
+    right: -25px; }
   .projet h2:first-child {
     margin-top: 0; }
 .projet h3 {
   position: relative;
-  width: 100%;
   color: #F6E6A5;
   text-decoration: none;
   align-self: center;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 0; }
+  margin-top: 0;
+  width: 100%;
+  padding: 1rem 0;
+  font-weight: 100; }
 .projet i {
   transform: translateY(2px); }
 
+#pageContenu.menu {
+  top: 0;
+  height: 100%; }
 #pageContenu h1.card-title {
   font-size: 1.2rem;
   line-height: 1.33rem;
   opacity: .4;
-  padding: 1rem 0; }
+  padding: 1rem 0;
+  display: none; }
 
 .page #sticky-wrapper {
   margin-bottom: 1rem;
   z-index: 6;
-  position: relative; }
+  position: relative;
+  background: #332F22; }
 
 video {
   z-index: 1;
@@ -2441,17 +2454,20 @@ video {
 
 h3 a {
   text-decoration: none;
-  background: #bcee8a;
   color: #1a1a1a;
   transition: all .2s ease-out;
   border-radius: 3px;
   margin-left: .25rem;
-  color: #bcee8a;
+  color: #FFEB3B;
   background: #1a1a1a;
-  border: 1px solid rgba(188, 238, 138, 0.2); }
+  border: 1px solid;
+  padding: .2rem .5rem; }
+  h3 a:before {
+    content: 'voir le site'; }
   h3 a:hover {
-    background: #bcee8a;
-    color: #1a1a1a; }
+    background: #FFEB3B;
+    color: #1a1a1a;
+    border: 1px solid #FFEB3B; }
 
 .projet h3 a i {
   transform: translateY(2px);
@@ -2469,11 +2485,11 @@ h3 a {
     line-height: 2.5rem; }
     .bt_close.bt_close--show i {
       border-radius: 50%;
-      border: 1px solid #bcee8a;
-      color: #bcee8a;
+      border: 1px solid #FFEB3B;
+      color: #FFEB3B;
       transition: all .2s ease-in-out; }
       .bt_close.bt_close--show i:hover {
-        background: #bcee8a;
+        background: #FFEB3B;
         color: #1a1a1a; }
     .bt_close.bt_close--show:hover {
       cursor: pointer; }

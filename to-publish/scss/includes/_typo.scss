@@ -3,7 +3,6 @@ $font-corps : 'Oswald', 'Roboto', sans-serif;
 
 @mixin titre-liste {
   position                : relative;
-  width                   : 100%;
   color                   : $couleur-typo--menu;
   text-decoration         : none;
   align-self              : center;
