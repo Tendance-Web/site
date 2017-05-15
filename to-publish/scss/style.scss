@@ -18,7 +18,7 @@ html {
   }
 }
 body {
-  padding     : 0 2rem;
+  padding     : 0 1%;
   background  : $couleur-fond--page;
   font-family : $font-lead;
   font-size   : 16px;
@@ -38,22 +38,21 @@ body {
 
 // MENU LINK -> PAGES
 .menu {
-  @include Menu-largeur;
+  @include Menu-largeur;// de _layers.scss
   opacity     : 1;
   position: relative;
-  top:12vh;
-  height      : 75vh;
-  background-color:$couleur-fond--menu;
+  height      : 100vh;
 
   z-index        : 1;
   display        : flex;
   text-align     : left;
   flex-direction : column;
+
+  justify-content: center;
+
   &__content {
     background-color: $couleur-fond--sousmenu;
-    padding: 35px;
-    height: 100%;
-    // Page appelé
+    padding:5% 7%;
     .page ul {
       &:first-child {
         margin-top: 0 !important;
@@ -66,9 +65,10 @@ body {
       li {
         padding : 0;
         &.image {
-          margin  : 15rem 0;
+          padding: 5vw 0;
           display: inherit;
-
+          border-bottom: 1px solid $couleur-fond--page;
+          &:last-child {border: 0}
           .w100 {width: 100%}
           img {
             width  : auto;
@@ -87,30 +87,53 @@ body {
   }
 }
 // Liens /////////////////////////////
+@keyframes underscore {
+  from {
+    opacity: 0;
+    width:15px;
+    height: 1px
+  }
+  to {
+    opacity: 1;
+    width:15px;
+    height: 1px
+}
+}
 // Liens -- Liste
 a.bt-slim {
   @include                     titre-liste;
   padding:.5625rem 0;
   color:$couleur-typo--menu;
-  transition-property        : text-indent;
-  transition-duration        : .2s;
-  transition-timing-function : ease-in-out;
   font-family:$font-lead;
+  &:hover:after {
+    display: block;
+    content: ' ';
+    background:$couleur-typo--menu;
+    top: 26px;
+    position: absolute;
+    right: -20px;
 
-  &:hover {
-    text-indent: 15px;
+
+    //animation:underscore .5s ease-out alternate infinite;
+    animation-name: underscore;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 }
 
 // Liste des projets réalisés
 .projet {
-  margin-top :3.96rem;
+  margin-top :1.8rem;
   &:first-child {margin-top: 0;}
   li {
     display       : flex;
     border-bottom : $couleur-bordure--sousmenu 1px solid;
     font-family   : $font-lead;
     transition: background .5s ease-in-out;
+    &:last-child {border: 0}
   }
 }
 
@@ -124,7 +147,7 @@ a.bt-slim {
     line-height: inherit;
     font-size: 3rem;
     font-weight: 300;
-    margin-bottom: 1rem;
+    margin-bottom: .8rem;
     &:after {
         display: block;
         content: ' ';
@@ -156,8 +179,10 @@ a.bt-slim {
 // TITRE H1 PAGE CONTENU
 #pageContenu {
   &.menu {
-    top:0;
     height: 100%;
+    .menu__content {
+      padding-top: 0;
+    }
   }
   h1.card-title {
     font-size   : 1.2rem;
@@ -168,7 +193,7 @@ a.bt-slim {
   }
 }
 .page #sticky-wrapper {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   z-index: 6;
   position: relative;
   background: $couleur-fond--menu;
@@ -229,34 +254,28 @@ h3 a {
 // Pied de page
 footer {
   width: 100%;
-  position: relative;
+  position: absolute;
   bottom: 0;
   text-align: center;
   padding: 12px;
   font-size: 13px;
-  background-color: $couleur-fond--menu;
-  color: $couleur-typo--menu;
-  font-weight:300;
-
+  font-weight:500;
 }
 
+#pageContenu footer {
+  color: $couleur-typo--footer;
+}
 
 // Mediaqueries
 @media only screen and (max-width : 620px) {
-        h1.card-title {
-          margin-bottom: 0rem;
-        }
-
-
-        // TITRE H1 PAGE COTENU
-        #pageContenu h1.card-title {
-          font-size   : 1.2rem;
-            line-height      : 1.33rem;
-            opacity: .4;
-            padding          : 1rem 0;
-
-        }
-
+.menu {
+  top:1vh;
+  justify-content: flex-start;
+}
+footer {
+  position: relative;
+  color: $couleur-fond--sousmenu !important;
+}
         .menu__content .page ul:first-child li.image {
           img {
             width: 50%;
