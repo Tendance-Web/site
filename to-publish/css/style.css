@@ -2384,8 +2384,7 @@ body {
         padding: 0; }
         .menu__content .page ul:first-child li.image {
           padding: 5vw 0;
-          display: inherit;
-          border-bottom: 1px solid #FFEB3B; }
+          display: inherit; }
           .menu__content .page ul:first-child li.image:last-child {
             border: 0; }
           .menu__content .page ul:first-child li.image .w100 {
