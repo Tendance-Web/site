@@ -32,7 +32,7 @@ body {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-attachment: fixed;
-  
+
 }
 ::-webkit-scrollbar {
   display : none;
@@ -73,8 +73,7 @@ body {
   }
   .menu__content {
     position: relative;
-
-    padding:4rem;
+    padding:4vh;
     @include animation (menu--rotate);
     animation-duration: 2s;
     animation-timing-function:ease-in-out;

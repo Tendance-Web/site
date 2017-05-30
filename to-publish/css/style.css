@@ -2347,7 +2347,7 @@ body {
     margin: 0 auto; }
 #home .menu__content {
   position: relative;
-  padding: 4rem;
+  padding: 4vh;
   animation-name: menu--rotate;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
