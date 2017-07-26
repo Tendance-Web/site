@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato');
+
+// CORPS DE TEXTE
+$tw-font-family: 'Inconsolata', monospace;
+
+// TITRE
+$tw-title-font-family: 'Lato', sans-serif;
+$tw-title-weight:bold;
+
+@mixin title {
+  font-family: $tw-title-font-family;
+  font-weight: $tw-title-weight;  
+}
