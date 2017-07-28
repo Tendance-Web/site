@@ -1,0 +1,9 @@
+ul * {
+  list-style: none;
+}
+nav {
+  background-color:$color-menu;
+  @extend .u-full-width;
+  height: 100%;
+  display: flex;
+}
