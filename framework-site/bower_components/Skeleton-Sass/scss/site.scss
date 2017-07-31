@@ -1,5 +1,8 @@
 @import "skeleton";
 @import "tw-design/colors";
+@import "tw-design/font";
+@import "tw-design/ui-pattern";
+@import "tw-design/nav";
 
 // CONTEXT
 html {
@@ -14,5 +17,9 @@ body {
 
 // TITRES
 h4 {
-  border-bottom: 1px solid $color-typo;
+  text-align: center;
+  @include title;
 }
+
+// CORPS DE TEXTE
+p {font-family: $tw-font-family;}
